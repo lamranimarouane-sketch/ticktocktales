@@ -42,8 +42,7 @@
   .level-card.hard{border-color:var(--secondary);}
   .level-card.hard::before{background:linear-gradient(135deg,rgba(255,107,107,.1),transparent);}
   .level-card:hover::before{opacity:1;}
-  .level-card.locked{opacity:.78;}
-  .lock-badge{position:absolute;top:10px;right:12px;background:linear-gradient(135deg,#FFD700,#FFA500);color:white;font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;box-shadow:0 2px 8px rgba(255,165,0,.4);letter-spacing:.5px;}
+
   .level-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
   .easy .level-icon{background:rgba(107,203,119,.2);}
   .medium .level-icon{background:rgba(255,217,61,.2);}
@@ -61,9 +60,7 @@
   .btn:active{transform:scale(.97);}
   .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;box-shadow:0 4px 20px rgba(91,79,233,.4);flex:1;}
   .btn-secondary{background:var(--card-bg);color:var(--text);box-shadow:var(--shadow);flex:1;}
-  .btn-gold{background:linear-gradient(135deg,#FFD700,#FFA500);color:white;box-shadow:0 4px 20px rgba(255,165,0,.45);flex:1;}
-
-  /* QUIZ */
+  /* FREE PLAY */
   .quiz-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
   .back-btn{width:44px;height:44px;border-radius:12px;border:none;background:var(--card-bg);box-shadow:var(--shadow);cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
   .back-btn:hover{transform:scale(1.1);}
@@ -123,24 +120,6 @@
   .badge-item .b-emoji{font-size:26px;}
   .badge-item .b-name{font-size:11px;color:var(--text-light);margin-top:3px;}
 
-  /* PAYWALL MODAL */
-  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(45,43,85,.72);backdrop-filter:blur(8px);z-index:300;align-items:center;justify-content:center;padding:20px;}
-  .modal-overlay.active{display:flex;}
-  .paywall-card{background:var(--card-bg);border-radius:28px;padding:28px 24px;max-width:380px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,.3);text-align:center;animation:modalIn .4s cubic-bezier(.34,1.56,.64,1);}
-  @keyframes modalIn{from{transform:scale(.85) translateY(20px)}to{transform:scale(1) translateY(0)}}
-  .paywall-icon{font-size:60px;margin-bottom:6px;}
-  .paywall-title{font-family:'Fredoka One',cursive;font-size:28px;color:var(--primary);margin-bottom:6px;}
-  .paywall-sub{font-size:15px;color:var(--text-light);margin-bottom:18px;line-height:1.4;}
-  .paywall-perks{list-style:none;margin-bottom:20px;display:flex;flex-direction:column;gap:9px;}
-  .paywall-perks li{display:flex;align-items:center;gap:10px;background:rgba(91,79,233,.06);border-radius:12px;padding:9px 14px;font-size:15px;font-weight:500;color:var(--text);text-align:left;}
-  .perk-icon{font-size:20px;flex-shrink:0;}
-  .price-badge{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;border-radius:16px;padding:10px 22px;display:inline-block;margin-bottom:18px;}
-  .price-badge .price{font-family:'Fredoka One',cursive;font-size:38px;line-height:1;}
-  .price-badge .price-sub{font-size:13px;opacity:.85;margin-top:2px;}
-  .paywall-actions{display:flex;flex-direction:column;gap:9px;}
-  .restore-link{font-size:13px;color:var(--text-light);cursor:pointer;text-decoration:underline;margin-top:2px;background:none;border:none;font-family:'Fredoka',sans-serif;}
-  .restore-link:hover{color:var(--primary);}
-
   /* FREE PLAY */
   canvas#clockFree{cursor:grab;filter:drop-shadow(0 10px 28px rgba(91,79,233,.2));}
 
@@ -156,30 +135,6 @@
 
 <canvas id="confetti-canvas"></canvas>
 <div class="feedback-toast" id="feedbackToast"></div>
-
-<!-- PAYWALL MODAL -->
-<div class="modal-overlay" id="paywallModal">
-  <div class="paywall-card">
-    <div class="paywall-icon">🔐</div>
-    <div class="paywall-title" id="pw-title">Unlock Full Game!</div>
-    <div class="paywall-sub" id="pw-sub">Get Medium &amp; Hard levels with one simple purchase</div>
-    <ul class="paywall-perks">
-      <li><span class="perk-icon">🟡</span><span id="pw-perk1">Medium Level — Half &amp; Quarter Hours</span></li>
-      <li><span class="perk-icon">🔴</span><span id="pw-perk2">Hard Level — Timed Challenges</span></li>
-      <li><span class="perk-icon">🏆</span><span id="pw-perk3">All Badges &amp; Rewards</span></li>
-      <li><span class="perk-icon">♾️</span><span id="pw-perk4">Lifetime Access — No Subscription</span></li>
-    </ul>
-    <div class="price-badge">
-      <div class="price">$3.99</div>
-      <div class="price-sub" id="pw-once">One-time payment</div>
-    </div>
-    <div class="paywall-actions">
-      <button class="btn btn-gold" onclick="purchasePremium()">✨ <span id="pw-btn">Unlock Now</span></button>
-      <button class="btn btn-secondary" onclick="closePaywall()">← <span id="pw-back">Maybe Later</span></button>
-      <button class="restore-link" id="pw-restore" onclick="restorePurchase()">Restore Purchase</button>
-    </div>
-  </div>
-</div>
 
 <div id="app">
   <!-- HOME -->
@@ -201,14 +156,12 @@
         <div class="level-info"><h3 id="lbl-easy">Easy</h3><p id="lbl-easy-desc">Whole hours only</p></div>
         <div class="level-stars">⭐</div>
       </div>
-      <div class="level-card medium locked" id="card-medium" onclick="tryLevel('medium')">
-        <div class="lock-badge" id="lock-medium">🔒 PRO</div>
+      <div class="level-card medium" id="card-medium" onclick="startGame('medium')">
         <div class="level-icon">🤔</div>
         <div class="level-info"><h3 id="lbl-medium">Medium</h3><p id="lbl-medium-desc">Half &amp; quarter hours</p></div>
         <div class="level-stars">⭐⭐</div>
       </div>
-      <div class="level-card hard locked" id="card-hard" onclick="tryLevel('hard')">
-        <div class="lock-badge" id="lock-hard">🔒 PRO</div>
+      <div class="level-card hard" id="card-hard" onclick="startGame('hard')">
         <div class="level-icon">🔥</div>
         <div class="level-info"><h3 id="lbl-hard">Hard</h3><p id="lbl-hard-desc">Any minute • Timed!</p></div>
         <div class="level-stars">⭐⭐⭐</div>
@@ -308,7 +261,7 @@
 
 <script>
 // =====================================================================
-// FULL LOCALIZATION — all screens: home, quiz, result, parent, paywall
+// FULL LOCALIZATION — all screens: home, quiz, result, parent
 // =====================================================================
 const LANGS = {
   en:{
@@ -330,13 +283,6 @@ const LANGS = {
     pScore:'TOTAL SCORE',pScoreSub:'points earned',
     pGames:'GAMES PLAYED',pStreak:'BEST STREAK',pRow:'in a row',
     pAcc:'OVERALL ACCURACY',pBadges:'BADGES EARNED',pReset:'Reset Progress',
-    pwTitle:'Unlock Full Game!',pwSub:'Get Medium & Hard levels with one simple purchase',
-    pwPerk1:'Medium Level — Half & Quarter Hours',
-    pwPerk2:'Hard Level — Timed Challenges',
-    pwPerk3:'All Badges & Rewards',
-    pwPerk4:'Lifetime Access — No Subscription',
-    pwOnce:'One-time payment',pwBtn:'Unlock Now',pwBack:'Maybe Later',pwRestore:'Restore Purchase',
-    lockPro:'🔒 PRO',
     nextQ:'Next ➜',seeResults:'See Results',
     badgeNames:{first:'First Steps',streak3:'On Fire',perfect:'Perfect!',hard:'Champion',medium:'Scholar',easy:'Starter'},
   },
@@ -359,13 +305,6 @@ const LANGS = {
     pScore:'SCORE TOTAL',pScoreSub:'points gagnés',
     pGames:'PARTIES JOUÉES',pStreak:'MEILLEURE SÉRIE',pRow:"d'affilée",
     pAcc:'PRÉCISION GLOBALE',pBadges:'BADGES OBTENUS',pReset:'Réinitialiser',
-    pwTitle:'Débloquer le jeu complet !',pwSub:'Accède aux niveaux Moyen et Difficile',
-    pwPerk1:'Niveau Moyen — Demies & Quarts',
-    pwPerk2:'Niveau Difficile — Défis chronométrés',
-    pwPerk3:'Tous les badges & récompenses',
-    pwPerk4:'Accès à vie — Sans abonnement',
-    pwOnce:'Paiement unique',pwBtn:'Débloquer maintenant',pwBack:'Plus tard',pwRestore:"Restaurer l'achat",
-    lockPro:'🔒 PRO',
     nextQ:'Suivant ➜',seeResults:'Voir les résultats',
     badgeNames:{first:'Premiers Pas',streak3:'En feu',perfect:'Parfait !',hard:'Champion',medium:'Érudit',easy:'Débutant'},
   },
@@ -388,13 +327,6 @@ const LANGS = {
     pScore:'PUNTUACIÓN TOTAL',pScoreSub:'puntos ganados',
     pGames:'PARTIDAS JUGADAS',pStreak:'MEJOR RACHA',pRow:'seguidas',
     pAcc:'PRECISIÓN GLOBAL',pBadges:'INSIGNIAS GANADAS',pReset:'Restablecer',
-    pwTitle:'¡Desbloquea el juego completo!',pwSub:'Accede a los niveles Medio y Difícil',
-    pwPerk1:'Nivel Medio — Medias y cuartos',
-    pwPerk2:'Nivel Difícil — Retos cronometrados',
-    pwPerk3:'Todas las insignias y recompensas',
-    pwPerk4:'Acceso de por vida — Sin suscripción',
-    pwOnce:'Pago único',pwBtn:'Desbloquear ahora',pwBack:'Quizás luego',pwRestore:'Restaurar compra',
-    lockPro:'🔒 PRO',
     nextQ:'Siguiente ➜',seeResults:'Ver resultados',
     badgeNames:{first:'Primeros pasos',streak3:'En llamas',perfect:'¡Perfecto!',hard:'Campeón',medium:'Erudito',easy:'Principiante'},
   },
@@ -417,13 +349,6 @@ const LANGS = {
     pScore:'مجموع النقاط',pScoreSub:'نقاط مكتسبة',
     pGames:'الألعاب الملعوبة',pStreak:'أفضل سلسلة',pRow:'متتالية',
     pAcc:'الدقة الإجمالية',pBadges:'الشارات المكتسبة',pReset:'إعادة تعيين',
-    pwTitle:'افتح اللعبة الكاملة!',pwSub:'احصل على المستويات المتوسط والصعب بدفعة واحدة',
-    pwPerk1:'المستوى المتوسط — نصف وربع الساعة',
-    pwPerk2:'المستوى الصعب — تحديات موقوتة',
-    pwPerk3:'جميع الشارات والمكافآت',
-    pwPerk4:'وصول مدى الحياة — بدون اشتراك',
-    pwOnce:'دفعة واحدة فقط',pwBtn:'افتح الآن',pwBack:'ربما لاحقاً',pwRestore:'استعادة الشراء',
-    lockPro:'🔒 برو',
     nextQ:'التالي ➜',seeResults:'عرض النتائج',
     badgeNames:{first:'الخطوات الأولى',streak3:'ملتهب',perfect:'مثالي!',hard:'بطل',medium:'عالم',easy:'مبتدئ'},
   },
@@ -449,7 +374,6 @@ function applyTranslations(){
   $('lbl-medium').textContent=l.medium;$('lbl-medium-desc').textContent=l.mediumDesc;
   $('lbl-hard').textContent=l.hard;$('lbl-hard-desc').textContent=l.hardDesc;
   $('lbl-parent').textContent=l.parent;$('lbl-practice').textContent=l.practice;
-  $('lock-medium').textContent=l.lockPro;$('lock-hard').textContent=l.lockPro;
   // Free play
   $('lbl-fp-title').textContent=l.fpTitle;$('lbl-fp-drag').textContent=l.fpDrag;
   // Result labels
@@ -463,12 +387,6 @@ function applyTranslations(){
   $('p-lbl-games').textContent=l.pGames;$('p-lbl-streak').textContent=l.pStreak;
   $('p-lbl-row').textContent=l.pRow;$('p-lbl-acc').textContent=l.pAcc;
   $('p-lbl-badges').textContent=l.pBadges;$('p-btn-reset').textContent=l.pReset;
-  // Paywall
-  $('pw-title').textContent=l.pwTitle;$('pw-sub').textContent=l.pwSub;
-  $('pw-perk1').textContent=l.pwPerk1;$('pw-perk2').textContent=l.pwPerk2;
-  $('pw-perk3').textContent=l.pwPerk3;$('pw-perk4').textContent=l.pwPerk4;
-  $('pw-once').textContent=l.pwOnce;$('pw-btn').textContent=l.pwBtn;
-  $('pw-back').textContent=l.pwBack;$('pw-restore').textContent=l.pwRestore;
   // Re-render badge grid if parent screen visible
   if($('screen-parent').classList.contains('active'))renderBadges();
 }
@@ -527,52 +445,6 @@ function pickQuestions(level,count=10){
 }
 
 // =====================================================================
-// PREMIUM / PAYWALL
-// =====================================================================
-
-// NOTE FOR PRODUCTION: Remove the localStorage.removeItem line below.
-// It resets the purchase state on every load so you can demo the paywall.
-// In a real app, you'd only read — never clear — this value here.
-try { localStorage.removeItem('ticktock_premium'); } catch(e) {}
-
-let isPremium = false;
-
-function updateLockUI(){
-  ['medium','hard'].forEach(lv=>{
-    const card = $('card-'+lv);
-    const lock = $('lock-'+lv);
-    if(!card||!lock) return;
-    if(isPremium){
-      card.classList.remove('locked');
-      card.style.opacity='';
-      lock.style.display='none';
-      card.onclick = () => startGame(lv);
-    } else {
-      card.classList.add('locked');
-      card.style.opacity='0.72';
-      lock.style.display='';
-      card.onclick = () => openPaywall();
-    }
-  });
-}
-
-function tryLevel(lv){ openPaywall(); }
-
-function openPaywall(){ applyTranslations(); $('paywallModal').classList.add('active'); }
-function closePaywall(){ $('paywallModal').classList.remove('active'); }
-
-function purchasePremium(){
-  isPremium = true;
-  try{ localStorage.setItem('ticktock_premium','true'); }catch(e){}
-  closePaywall(); updateLockUI(); showToast('🎉 Unlocked!', true);
-}
-function restorePurchase(){
-  isPremium = true;
-  try{ localStorage.setItem('ticktock_premium','true'); }catch(e){}
-  closePaywall(); updateLockUI(); showToast('✅ Restored!', true);
-}
-
-// =====================================================================
 // STATE & PERSISTENCE
 // =====================================================================
 const BADGES_DEF=[
@@ -607,7 +479,7 @@ loadProgress();
 // NAVIGATION
 // =====================================================================
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$('screen-'+id).classList.add('active');}
-function goHome(){showScreen('home');updateLockUI();}
+function goHome(){showScreen('home');}
 
 function showParent(){
   showScreen('parent');
@@ -713,7 +585,6 @@ function generateChoices(correct,level){
 }
 
 function startGame(level){
-  if((level==='medium'||level==='hard')&&!isPremium){openPaywall();return;}
   refreshPools();
   Object.assign(state,{level,score:0,streak:0,bestStreak:0,questionsAnswered:0,correctCount:0,answered:false,_lastBadge:null,currentQIndex:0});
   state.sessionQuestions=pickQuestions(level,10);
@@ -898,7 +769,6 @@ function animConf(){
 // =====================================================================
 // INIT
 // =====================================================================
-updateLockUI();
 applyTranslations();
 </script>
 </body>
