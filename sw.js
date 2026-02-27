@@ -1,15 +1,18 @@
-const CACHE = 'ticktock-v1';
+const CACHE = 'ticktock-v2';
+const BASE = 'https://lamranimarouane-sketch.github.io/ticktocktales/';
 const FILES = [
-  '/ticktocktales/',
-  '/ticktocktales/index.html',
-  '/ticktocktales/manifest.json',
-  '/ticktocktales/icon-192.png',
-  '/ticktocktales/icon-512.png'
+  BASE,
+  BASE + 'index.html',
+  BASE + 'manifest.json',
+  BASE + 'icon-192.png',
+  BASE + 'icon-512.png'
 ];
 
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(FILES))
+    caches.open(CACHE).then(c => {
+      return Promise.allSettled(FILES.map(f => c.add(f)));
+    })
   );
   self.skipWaiting();
 });
@@ -27,7 +30,7 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(r =>
       r || fetch(e.request).catch(() =>
-        caches.match('/ticktocktales/index.html')
+        caches.match(BASE + 'index.html')
       )
     )
   );

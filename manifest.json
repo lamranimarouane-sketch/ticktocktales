@@ -2,8 +2,8 @@
   "name": "TickTock Tales",
   "short_name": "TickTock",
   "description": "Fun clock-reading game for kids ages 5-9. Learn to tell time with Easy, Medium and Hard levels, badges, and 4 languages!",
-  "start_url": "/ticktocktales/",
-  "scope": "/ticktocktales/",
+  "start_url": "https://lamranimarouane-sketch.github.io/ticktocktales/",
+  "scope": "https://lamranimarouane-sketch.github.io/ticktocktales/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#FFF9F0",
@@ -12,13 +12,13 @@
   "categories": ["education", "games", "kids"],
   "icons": [
     {
-      "src": "/ticktocktales/icon-192.png",
+      "src": "https://lamranimarouane-sketch.github.io/ticktocktales/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/ticktocktales/icon-512.png",
+      "src": "https://lamranimarouane-sketch.github.io/ticktocktales/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
