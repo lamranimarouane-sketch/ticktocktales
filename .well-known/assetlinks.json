@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.lamranimarouane.ticktocktales",
+    "sha256_cert_fingerprints": ["D7:63:6A:64:FB:A1:6E:D0:F1:F5:27:11:83:D8:FA:AE:6F:5D:C6:40"]
+  }
+}]
