@@ -2,7 +2,17 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "com.lamranimarouane.ticktocktales",
+    "package_name": "io.github.lamranimarouane_sketch.twa",
     "sha256_cert_fingerprints": ["92:17:C8:EC:A3:0F:D3:58:28:A1:D0:D3:51:3C:D4:98:10:87:EB:7A:33:A7:38:3A:6F:F1:B0:16:78:03:19:FC"]
   }
 }]
+```
+4. Commit
+
+---
+
+## Step 2 — Verify it's live
+
+Open this in your browser and confirm you see the updated content:
+```
+https://lamranimarouane-sketch.github.io/ticktocktales/.well-known/assetlinks.json
