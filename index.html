@@ -159,6 +159,9 @@
       <button class="lang-btn" onclick="setLang('es',this)">🇪🇸 ES</button>
       <button class="lang-btn" onclick="setLang('ar',this)">🇸🇦 AR</button>
     </div>
+    <div style="background:var(--card-bg);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow);margin-bottom:14px;text-align:center;border-left:4px solid var(--primary);">
+      <p id="home-intro" style="font-size:15px;color:var(--text);line-height:1.6;">Tick tock! 🌟 Do you know what time it is? Play, learn, and collect badges as you master the clock!</p>
+    </div>
     <div class="level-grid">
       <div class="level-card easy" onclick="startGame('easy')">
         <div class="level-icon">😊</div>
@@ -275,6 +278,7 @@
 const LANGS = {
   en:{
     tagline:"Learn to tell time — it's fun! ⭐",
+    intro:"Tick tock! 🌟 Do you know what time it is? Play, learn, and collect badges as you master the clock!",
     easy:'Easy',easyDesc:'Whole hours only',
     medium:'Medium',mediumDesc:'Half & quarter hours',
     hard:'Hard',hardDesc:'Any minute • Timed!',
@@ -297,6 +301,7 @@ const LANGS = {
   },
   fr:{
     tagline:"Apprends l'heure — c'est amusant ! ⭐",
+    intro:"Tic tac ! 🌟 Tu sais quelle heure il est ? Joue, apprends et collecte des badges en maîtrisant l'horloge !",
     easy:'Facile',easyDesc:'Heures entières seulement',
     medium:'Moyen',mediumDesc:"Demies et quarts d'heure",
     hard:'Difficile',hardDesc:'Toutes les minutes • Chrono !',
@@ -319,6 +324,7 @@ const LANGS = {
   },
   es:{
     tagline:"¡Aprende la hora — es divertido! ⭐",
+    intro:"¡Tic tac! 🌟 ¿Sabes qué hora es? ¡Juega, aprende y colecciona insignias mientras dominas el reloj!",
     easy:'Fácil',easyDesc:'Solo horas enteras',
     medium:'Medio',mediumDesc:'Medias y cuartos de hora',
     hard:'Difícil',hardDesc:'¡Cualquier minuto • Cronometrado!',
@@ -341,6 +347,7 @@ const LANGS = {
   },
   ar:{
     tagline:"تعلم قراءة الساعة — إنه ممتع! ⭐",
+    intro:"تِك تَاك! 🌟 هل تعرف الساعة كم؟ العب وتعلم واجمع الشارات وأنت تتقن قراءة الساعة!",
     easy:'سهل',easyDesc:'ساعات كاملة فقط',
     medium:'متوسط',mediumDesc:'نصف وربع الساعة',
     hard:'صعب',hardDesc:'أي دقيقة • موقوت!',
@@ -379,6 +386,7 @@ function applyTranslations(){
   const l=LANGS[currentLang];
   // Home
   $('home-tagline').textContent=l.tagline;
+  $('home-intro').textContent=l.intro;
   $('lbl-easy').textContent=l.easy;$('lbl-easy-desc').textContent=l.easyDesc;
   $('lbl-medium').textContent=l.medium;$('lbl-medium-desc').textContent=l.mediumDesc;
   $('lbl-hard').textContent=l.hard;$('lbl-hard-desc').textContent=l.hardDesc;
