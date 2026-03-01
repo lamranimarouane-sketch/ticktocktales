@@ -498,23 +498,37 @@ function makeEasyPool(){
 
 function makeMediumPool(){
   const pool=[];const mins=[0,15,30,45];
+  // AM times (3 reps)
   for(let rep=0;rep<3;rep++){
     for(let h=0;h<12;h++){
-      for(const m of mins) pool.push({h,m});
+      for(const m of mins) pool.push({h,m,pm:false});
+    }
+  }
+  // PM times — 13:00 to 23:45 at quarter hours
+  const pmHours=[13,14,15,16,17,18,19,20,21,22,23];
+  for(let rep=0;rep<2;rep++){
+    for(const ph of pmHours){
+      for(const m of mins) pool.push({h:ph%12,m,pm:true,ph});
     }
   }
   return shuffle(pool).slice(0,100);
 }
 
 function makeHardPool(){
-  // Curated set: every 5-min mark for all hours, plus random fill
   const pool=[];
+  // AM: every 5-min mark
   for(let h=0;h<12;h++){
-    for(let m=0;m<60;m+=5) pool.push({h,m});
+    for(let m=0;m<60;m+=5) pool.push({h,m,pm:false});
   }
-  // random minutes to fill to 100
+  // PM: every 5-min mark for 13:00–23:55
+  const pmHours=[13,14,15,16,17,18,19,20,21,22,23];
+  for(const ph of pmHours){
+    for(let m=0;m<60;m+=5) pool.push({h:ph%12,m,pm:true,ph});
+  }
+  // random PM minutes to fill to 100
   while(pool.length<100){
-    pool.push({h:Math.floor(Math.random()*12),m:Math.floor(Math.random()*60)});
+    const ph=pmHours[Math.floor(Math.random()*pmHours.length)];
+    pool.push({h:ph%12,m:Math.floor(Math.random()*60),pm:true,ph});
   }
   return shuffle(pool).slice(0,100);
 }
@@ -646,7 +660,10 @@ function drawHand(ctx,cx,cy,angle,len,width,color,glow){
 // =====================================================================
 // QUIZ LOGIC
 // =====================================================================
-function formatTime(h,m){const hd=h===0?12:h;return hd+':'+String(m).padStart(2,'0');}
+function formatTime(h,m,pm,ph){
+  if(pm&&ph!==undefined) return ph+':'+String(m).padStart(2,'0');
+  const hd=h===0?12:h;return hd+':'+String(m).padStart(2,'0');
+}
 
 function timeWords(h,m){
   const names=['twelve','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve'];
@@ -665,9 +682,9 @@ function generateChoices(correct,level){
   while(choices.length<4&&tries<300){
     tries++;
     const c=pool[Math.floor(Math.random()*pool.length)];
-    if(!choices.some(x=>x.h===c.h&&x.m===c.m)) choices.push(c);
+    if(!choices.some(x=>x.h===c.h&&x.m===c.m&&(!!x.pm)===(!!c.pm)&&(x.ph||0)===(c.ph||0))) choices.push(c);
   }
-  while(choices.length<4) choices.push({h:Math.floor(Math.random()*12),m:Math.floor(Math.random()*60)});
+  while(choices.length<4) choices.push({h:Math.floor(Math.random()*12),m:Math.floor(Math.random()*60),pm:false});
   return shuffle(choices);
 }
 
@@ -689,7 +706,7 @@ function renderQuestion(){
   $('questionText').textContent=l.whatTime;
   drawClock($('clock'),state.targetTime.h,state.targetTime.m,240);
   const choices=generateChoices(state.targetTime,state.level);
-  $('choicesContainer').innerHTML=`<div class="choices-grid">${choices.map(c=>`<button class="btn-choice-grid" onclick="submitAnswer(${c.h},${c.m},this)">${formatTime(c.h,c.m)}</button>`).join('')}</div>`;
+  $('choicesContainer').innerHTML=`<div class="choices-grid">${choices.map(c=>`<button class="btn-choice-grid" onclick="submitAnswer(${c.h},${c.m},${!!c.pm},${c.ph||'undefined'},this)">${formatTime(c.h,c.m,c.pm,c.ph)}</button>`).join('')}</div>`;
   $('nextBtnWrap').style.display='none';
 }
 
@@ -699,10 +716,11 @@ function nextQuestion(){
   else renderQuestion();
 }
 
-function submitAnswer(h,m,btn){
+function submitAnswer(h,m,pm,ph,btn){
   if(state.answered)return;
   state.answered=true;state.questionsAnswered++;state.totalAnswered++;
-  const correct=state.targetTime.h===h&&state.targetTime.m===m;
+  const t=state.targetTime;
+  const correct=t.h===h&&t.m===m&&(!!t.pm)===pm&&(t.ph||0)===(ph||0);
   const l=LANGS[currentLang];
   if(correct){
     btn.classList.add('correct');
@@ -718,7 +736,7 @@ function submitAnswer(h,m,btn){
     btn.classList.add('wrong');state.streak=0;
     showToast(l.wrong[Math.floor(Math.random()*l.wrong.length)],false);
     document.querySelectorAll('.btn-choice-grid').forEach(b=>{
-      if(b.textContent.trim()===formatTime(state.targetTime.h,state.targetTime.m))
+      if(b.textContent.trim()===formatTime(state.targetTime.h,state.targetTime.m,state.targetTime.pm,state.targetTime.ph))
         setTimeout(()=>b.classList.add('correct'),300);
     });
   }
