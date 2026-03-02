@@ -115,7 +115,16 @@
   .level-card.medium::before{background:linear-gradient(135deg,rgba(255,217,61,.1),transparent);}
   .level-card.hard{border-color:var(--secondary);}
   .level-card.hard::before{background:linear-gradient(135deg,rgba(255,107,107,.1),transparent);}
+  .level-card.xhard{border-color:#9C27B0;}
+  .level-card.xhard::before{background:linear-gradient(135deg,rgba(156,39,176,.1),transparent);}
   .level-card:hover::before{opacity:1;}
+  .xhard .level-icon{background:rgba(156,39,176,.2);}
+  /* TIMER */
+  .timer-wrap{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;}
+  .timer-circle{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fredoka One',cursive;font-size:22px;color:white;background:conic-gradient(var(--primary) var(--pct,100%),rgba(91,79,233,.15) 0);transition:background .3s;box-shadow:0 4px 16px rgba(91,79,233,.3);position:relative;flex-shrink:0;}
+  .timer-circle.warning{background:conic-gradient(var(--accent) var(--pct,100%),rgba(255,217,61,.15) 0);box-shadow:0 4px 16px rgba(255,217,61,.4);}
+  .timer-circle.danger{background:conic-gradient(var(--secondary) var(--pct,100%),rgba(255,107,107,.15) 0);box-shadow:0 4px 16px rgba(255,107,107,.4);animation:pulse .5s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 
   .level-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
   .easy .level-icon{background:rgba(107,203,119,.2);}
@@ -248,10 +257,33 @@
         <div class="level-info"><h3 id="lbl-hard">Hard</h3><p id="lbl-hard-desc">Any minute • Timed!</p></div>
         <div class="level-stars">⭐⭐⭐</div>
       </div>
+      <div class="level-card xhard" id="card-xhard" onclick="showTimerPicker()">
+        <div class="level-icon">💀</div>
+        <div class="level-info"><h3 id="lbl-xhard">Extra Hard</h3><p id="lbl-xhard-desc">Beat the clock! 20s or 30s</p></div>
+        <div class="level-stars">⭐⭐⭐⭐</div>
+      </div>
     </div>
     <div class="home-footer">
       <button class="btn btn-secondary" onclick="showParent()">👨‍👩‍👧 <span id="lbl-parent">Parent</span></button>
       <button class="btn btn-primary" onclick="showFreePlay()">🕐 <span id="lbl-practice">Practice</span></button>
+    </div>
+  </div>
+
+  <!-- TIMER PICKER -->
+  <div class="screen" id="screen-timerpick">
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:20px;padding:20px;">
+      <div style="font-size:64px;">💀</div>
+      <div style="font-family:'Fredoka One',cursive;font-size:28px;color:var(--primary);" id="lbl-tp-title">Extra Hard Mode</div>
+      <div style="font-size:15px;color:var(--text-light);max-width:300px;" id="lbl-tp-sub">Choose your timer. Answer before it runs out or the question counts as wrong!</div>
+      <div style="display:flex;gap:14px;margin-top:8px;">
+        <button onclick="startGame('xhard',20)" style="font-family:'Fredoka One',cursive;font-size:28px;background:linear-gradient(135deg,#9C27B0,#CE93D8);color:white;border:none;border-radius:20px;padding:22px 28px;cursor:pointer;box-shadow:0 6px 24px rgba(156,39,176,.35);transition:transform .2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          ⏱️<br><span style="font-size:16px;" id="lbl-tp-20s">20 seconds</span>
+        </button>
+        <button onclick="startGame('xhard',30)" style="font-family:'Fredoka One',cursive;font-size:28px;background:linear-gradient(135deg,#5B4FE9,#8B82F0);color:white;border:none;border-radius:20px;padding:22px 28px;cursor:pointer;box-shadow:0 6px 24px rgba(91,79,233,.35);transition:transform .2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          ⏱️<br><span style="font-size:16px;" id="lbl-tp-30s">30 seconds</span>
+        </button>
+      </div>
+      <button class="btn btn-secondary" style="margin-top:8px;width:100%;max-width:300px;" onclick="goHome()">← <span id="lbl-tp-back">Back</span></button>
     </div>
   </div>
 
@@ -262,6 +294,11 @@
       <div class="score-strip">
         <span class="score-val">⭐ <span id="scoreDisplay">0</span></span>
         <span class="streak-val">🔥 <span id="streakDisplay">0</span></span>
+      </div>
+      <div id="timerWrap" class="timer-wrap" style="display:none">
+        <div class="timer-circle" id="timerCircle">
+          <span id="timerText">20</span>
+        </div>
       </div>
     </div>
     <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div>
@@ -352,6 +389,10 @@ const LANGS = {
     easy:'Easy',easyDesc:'Whole hours only',
     medium:'Medium',mediumDesc:'Half & quarter hours',
     hard:'Hard',hardDesc:'Any minute • Timed!',
+    xhard:'Extra Hard',xhardDesc:'Beat the clock! 20s or 30s',
+    tpTitle:'Extra Hard Mode',tpSub:'Choose your timer. Answer before it runs out or the question counts as wrong!',
+    tp20s:'20 seconds',tp30s:'30 seconds',tpBack:'Back',
+    timeUp:"Time's up! ⏰",
     parent:'Parent',practice:'Practice',
     fpTitle:'Free Practice',fpDrag:'Drag the hands to any time!',
     whatTime:'What time does the clock show?',
@@ -367,7 +408,7 @@ const LANGS = {
     pGames:'GAMES PLAYED',pStreak:'BEST STREAK',pRow:'in a row',
     pAcc:'OVERALL ACCURACY',pBadges:'BADGES EARNED',pReset:'Reset Progress',
     nextQ:'Next ➜',seeResults:'See Results',
-    badgeNames:{first:'First Steps',streak3:'On Fire',perfect:'Perfect!',hard:'Champion',medium:'Scholar',easy:'Starter'},
+    badgeNames:{first:'First Steps',streak3:'On Fire',perfect:'Perfect!',hard:'Champion',xhard:'Time Master',medium:'Scholar',easy:'Starter'},
   },
   fr:{
     tagline:"Apprends l'heure — c'est amusant ! ⭐",
@@ -375,6 +416,10 @@ const LANGS = {
     easy:'Facile',easyDesc:'Heures entières seulement',
     medium:'Moyen',mediumDesc:"Demies et quarts d'heure",
     hard:'Difficile',hardDesc:'Toutes les minutes • Chrono !',
+    xhard:'Extra Difficile',xhardDesc:'Bats le chrono ! 20s ou 30s',
+    tpTitle:'Mode Extra Difficile',tpSub:'Choisis ton chrono. Réponds avant la fin ou la question compte comme fausse !',
+    tp20s:'20 secondes',tp30s:'30 secondes',tpBack:'Retour',
+    timeUp:"Temps écoulé ! ⏰",
     parent:'Parents',practice:'Pratique',
     fpTitle:'Pratique libre',fpDrag:'Fais glisser les aiguilles !',
     whatTime:"Quelle heure indique l'horloge ?",
@@ -390,7 +435,7 @@ const LANGS = {
     pGames:'PARTIES JOUÉES',pStreak:'MEILLEURE SÉRIE',pRow:"d'affilée",
     pAcc:'PRÉCISION GLOBALE',pBadges:'BADGES OBTENUS',pReset:'Réinitialiser',
     nextQ:'Suivant ➜',seeResults:'Voir les résultats',
-    badgeNames:{first:'Premiers Pas',streak3:'En feu',perfect:'Parfait !',hard:'Champion',medium:'Érudit',easy:'Débutant'},
+    badgeNames:{first:'Premiers Pas',streak3:'En feu',perfect:'Parfait !',hard:'Champion',xhard:'Maître du temps',medium:'Érudit',easy:'Débutant'},
   },
   es:{
     tagline:"¡Aprende la hora — es divertido! ⭐",
@@ -398,6 +443,10 @@ const LANGS = {
     easy:'Fácil',easyDesc:'Solo horas enteras',
     medium:'Medio',mediumDesc:'Medias y cuartos de hora',
     hard:'Difícil',hardDesc:'¡Cualquier minuto • Cronometrado!',
+    xhard:'Extra Difícil',xhardDesc:'¡Vence el reloj! 20s o 30s',
+    tpTitle:'Modo Extra Difícil',tpSub:'Elige tu temporizador. ¡Responde antes de que se acabe o la pregunta cuenta como incorrecta!',
+    tp20s:'20 segundos',tp30s:'30 segundos',tpBack:'Volver',
+    timeUp:"¡Tiempo agotado! ⏰",
     parent:'Padres',practice:'Practicar',
     fpTitle:'Práctica libre',fpDrag:'¡Arrastra las manecillas!',
     whatTime:'¿Qué hora muestra el reloj?',
@@ -413,7 +462,7 @@ const LANGS = {
     pGames:'PARTIDAS JUGADAS',pStreak:'MEJOR RACHA',pRow:'seguidas',
     pAcc:'PRECISIÓN GLOBAL',pBadges:'INSIGNIAS GANADAS',pReset:'Restablecer',
     nextQ:'Siguiente ➜',seeResults:'Ver resultados',
-    badgeNames:{first:'Primeros pasos',streak3:'En llamas',perfect:'¡Perfecto!',hard:'Campeón',medium:'Erudito',easy:'Principiante'},
+    badgeNames:{first:'Primeros pasos',streak3:'En llamas',perfect:'¡Perfecto!',hard:'Campeón',xhard:'Maestro del tiempo',medium:'Erudito',easy:'Principiante'},
   },
   ar:{
     tagline:"تعلم قراءة الساعة — إنه ممتع! ⭐",
@@ -421,6 +470,10 @@ const LANGS = {
     easy:'سهل',easyDesc:'ساعات كاملة فقط',
     medium:'متوسط',mediumDesc:'نصف وربع الساعة',
     hard:'صعب',hardDesc:'أي دقيقة • موقوت!',
+    xhard:'صعب جداً',xhardDesc:'تحدَّ المؤقت! 20 أو 30 ثانية',
+    tpTitle:'وضع صعب جداً',tpSub:'اختر مؤقتك. أجب قبل انتهاء الوقت أو يُحتسب السؤال خطأ!',
+    tp20s:'20 ثانية',tp30s:'30 ثانية',tpBack:'رجوع',
+    timeUp:"انتهى الوقت! ⏰",
     parent:'الوالدان',practice:'تدريب',
     fpTitle:'تدريب حر',fpDrag:'اسحب عقارب الساعة!',
     whatTime:'ما الوقت الذي تُظهره الساعة؟',
@@ -436,7 +489,7 @@ const LANGS = {
     pGames:'الألعاب الملعوبة',pStreak:'أفضل سلسلة',pRow:'متتالية',
     pAcc:'الدقة الإجمالية',pBadges:'الشارات المكتسبة',pReset:'إعادة تعيين',
     nextQ:'التالي ➜',seeResults:'عرض النتائج',
-    badgeNames:{first:'الخطوات الأولى',streak3:'ملتهب',perfect:'مثالي!',hard:'بطل',medium:'عالم',easy:'مبتدئ'},
+    badgeNames:{first:'الخطوات الأولى',streak3:'ملتهب',perfect:'مثالي!',hard:'بطل',xhard:'سيد الوقت',medium:'عالم',easy:'مبتدئ'},
   },
 };
 
@@ -460,6 +513,10 @@ function applyTranslations(){
   $('lbl-easy').textContent=l.easy;$('lbl-easy-desc').textContent=l.easyDesc;
   $('lbl-medium').textContent=l.medium;$('lbl-medium-desc').textContent=l.mediumDesc;
   $('lbl-hard').textContent=l.hard;$('lbl-hard-desc').textContent=l.hardDesc;
+  $('lbl-xhard').textContent=l.xhard;$('lbl-xhard-desc').textContent=l.xhardDesc;
+  $('lbl-tp-title').textContent=l.tpTitle;$('lbl-tp-sub').textContent=l.tpSub;
+  $('lbl-tp-20s').textContent=l.tp20s;$('lbl-tp-30s').textContent=l.tp30s;
+  $('lbl-tp-back').textContent=l.tpBack;
   $('lbl-parent').textContent=l.parent;$('lbl-practice').textContent=l.practice;
   // Free play
   $('lbl-fp-title').textContent=l.fpTitle;$('lbl-fp-drag').textContent=l.fpDrag;
@@ -533,11 +590,12 @@ function makeHardPool(){
   return shuffle(pool).slice(0,100);
 }
 
-let POOLS={easy:[],medium:[],hard:[]};
+let POOLS={easy:[],medium:[],hard:[],xhard:[]};
 function refreshPools(){
   POOLS.easy=makeEasyPool();
   POOLS.medium=makeMediumPool();
   POOLS.hard=makeHardPool();
+  POOLS.xhard=makeHardPool(); // same questions as hard, timer adds difficulty
 }
 refreshPools();
 
@@ -553,6 +611,7 @@ const BADGES_DEF=[
   {id:'streak3',emoji:'🔥',nameKey:'streak3'},
   {id:'perfect',emoji:'💎',nameKey:'perfect'},
   {id:'hard',emoji:'🏆',nameKey:'hard'},
+  {id:'xhard',emoji:'💀',nameKey:'xhard'},
   {id:'medium',emoji:'🥈',nameKey:'medium'},
   {id:'easy',emoji:'🥉',nameKey:'easy'},
 ];
@@ -580,7 +639,7 @@ loadProgress();
 // NAVIGATION
 // =====================================================================
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$('screen-'+id).classList.add('active');}
-function goHome(){showScreen('home');}
+function goHome(){clearTimer();showScreen('home');}
 
 function showParent(){
   showScreen('parent');
@@ -688,7 +747,63 @@ function generateChoices(correct,level){
   return shuffle(choices);
 }
 
-function startGame(level){
+function showTimerPicker(){showScreen('timerpick');}
+
+let timerInterval=null;
+let timerSeconds=20;
+
+function clearTimer(){
+  if(timerInterval){clearInterval(timerInterval);timerInterval=null;}
+}
+
+function startTimer(){
+  if(state.level!=='xhard'){$('timerWrap').style.display='none';return;}
+  $('timerWrap').style.display='flex';
+  let remaining=timerSeconds;
+  const total=timerSeconds;
+  const circle=$('timerCircle');
+  const text=$('timerText');
+  function update(){
+    text.textContent=remaining;
+    const pct=Math.round(remaining/total*100);
+    circle.style.setProperty('--pct',pct+'%');
+    circle.className='timer-circle';
+    if(remaining<=Math.ceil(total*0.4)) circle.classList.add('warning');
+    if(remaining<=5) circle.classList.add('danger');
+  }
+  update();
+  timerInterval=setInterval(()=>{
+    remaining--;
+    if(remaining<0){
+      clearTimer();
+      if(!state.answered) timeUp();
+      return;
+    }
+    update();
+  },1000);
+}
+
+function timeUp(){
+  state.answered=true;state.questionsAnswered++;state.totalAnswered++;
+  state.streak=0;
+  const l=LANGS[currentLang];
+  showToast(l.timeUp,false);
+  // highlight correct answer
+  document.querySelectorAll('.btn-choice-grid').forEach(b=>{
+    if(b.textContent.trim()===formatTime(state.targetTime.h,state.targetTime.m,state.targetTime.pm,state.targetTime.ph))
+      setTimeout(()=>b.classList.add('correct'),200);
+    b.style.opacity='.42';b.style.pointerEvents='none';
+  });
+  $('scoreDisplay').textContent=state.score;$('streakDisplay').textContent=state.streak;
+  const isLast=state.currentQIndex>=state.sessionQuestions.length-1;
+  $('nextBtnWrap').style.display='block';
+  $('nextBtn').textContent=isLast?l.seeResults:l.nextQ;
+  saveProgress();
+}
+
+function startGame(level,seconds){
+  clearTimer();
+  if(seconds) timerSeconds=seconds;
   refreshPools();
   Object.assign(state,{level,score:0,streak:0,bestStreak:0,questionsAnswered:0,correctCount:0,answered:false,_lastBadge:null,currentQIndex:0});
   state.sessionQuestions=pickQuestions(level,10);
@@ -697,6 +812,7 @@ function startGame(level){
 }
 
 function renderQuestion(){
+  clearTimer();
   const qi=state.currentQIndex,total=state.sessionQuestions.length;
   state.targetTime=state.sessionQuestions[qi];state.answered=false;
   const l=LANGS[currentLang];
@@ -708,6 +824,7 @@ function renderQuestion(){
   const choices=generateChoices(state.targetTime,state.level);
   $('choicesContainer').innerHTML=`<div class="choices-grid">${choices.map(c=>`<button class="btn-choice-grid" onclick="submitAnswer(${c.h},${c.m},${!!c.pm},${c.ph||'undefined'},this)">${formatTime(c.h,c.m,c.pm,c.ph)}</button>`).join('')}</div>`;
   $('nextBtnWrap').style.display='none';
+  startTimer();
 }
 
 function nextQuestion(){
@@ -718,6 +835,7 @@ function nextQuestion(){
 
 function submitAnswer(h,m,pm,ph,btn){
   if(state.answered)return;
+  clearTimer();
   state.answered=true;state.questionsAnswered++;state.totalAnswered++;
   const t=state.targetTime;
   const correct=t.h===h&&t.m===m&&(!!t.pm)===pm&&(t.ph||0)===(ph||0);
