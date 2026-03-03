@@ -275,7 +275,10 @@
       <div style="font-size:64px;">💀</div>
       <div style="font-family:'Fredoka One',cursive;font-size:28px;color:var(--primary);" id="lbl-tp-title">Extra Hard Mode</div>
       <div style="font-size:15px;color:var(--text-light);max-width:300px;" id="lbl-tp-sub">Choose your timer. Answer before it runs out or the question counts as wrong!</div>
-      <div style="display:flex;gap:14px;margin-top:8px;">
+      <div style="display:flex;gap:14px;margin-top:8px;flex-wrap:wrap;justify-content:center;">
+        <button onclick="startGame('xhard',10)" style="font-family:'Fredoka One',cursive;font-size:28px;background:linear-gradient(135deg,#FF6B6B,#FF8E8E);color:white;border:none;border-radius:20px;padding:22px 28px;cursor:pointer;box-shadow:0 6px 24px rgba(255,107,107,.35);transition:transform .2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          ⏱️<br><span style="font-size:16px;" id="lbl-tp-10s">10 seconds</span>
+        </button>
         <button onclick="startGame('xhard',20)" style="font-family:'Fredoka One',cursive;font-size:28px;background:linear-gradient(135deg,#9C27B0,#CE93D8);color:white;border:none;border-radius:20px;padding:22px 28px;cursor:pointer;box-shadow:0 6px 24px rgba(156,39,176,.35);transition:transform .2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
           ⏱️<br><span style="font-size:16px;" id="lbl-tp-20s">20 seconds</span>
         </button>
@@ -389,9 +392,9 @@ const LANGS = {
     easy:'Easy',easyDesc:'Whole hours only',
     medium:'Medium',mediumDesc:'Half & quarter hours',
     hard:'Hard',hardDesc:'Any minute • Timed!',
-    xhard:'Extra Hard',xhardDesc:'Beat the clock! 20s or 30s',
+    xhard:'Extra Hard',xhardDesc:'Beat the clock! 10s, 20s or 30s',
     tpTitle:'Extra Hard Mode',tpSub:'Choose your timer. Answer before it runs out or the question counts as wrong!',
-    tp20s:'20 seconds',tp30s:'30 seconds',tpBack:'Back',
+    tp10s:'10 seconds',tp20s:'20 seconds',tp30s:'30 seconds',tpBack:'Back',
     timeUp:"Time's up! ⏰",
     parent:'Parent',practice:'Practice',
     fpTitle:'Free Practice',fpDrag:'Drag the hands to any time!',
@@ -416,9 +419,9 @@ const LANGS = {
     easy:'Facile',easyDesc:'Heures entières seulement',
     medium:'Moyen',mediumDesc:"Demies et quarts d'heure",
     hard:'Difficile',hardDesc:'Toutes les minutes • Chrono !',
-    xhard:'Extra Difficile',xhardDesc:'Bats le chrono ! 20s ou 30s',
+    xhard:'Extra Difficile',xhardDesc:'Bats le chrono ! 10s, 20s ou 30s',
     tpTitle:'Mode Extra Difficile',tpSub:'Choisis ton chrono. Réponds avant la fin ou la question compte comme fausse !',
-    tp20s:'20 secondes',tp30s:'30 secondes',tpBack:'Retour',
+    tp10s:'10 secondes',tp20s:'20 secondes',tp30s:'30 secondes',tpBack:'Retour',
     timeUp:"Temps écoulé ! ⏰",
     parent:'Parents',practice:'Pratique',
     fpTitle:'Pratique libre',fpDrag:'Fais glisser les aiguilles !',
@@ -443,9 +446,9 @@ const LANGS = {
     easy:'Fácil',easyDesc:'Solo horas enteras',
     medium:'Medio',mediumDesc:'Medias y cuartos de hora',
     hard:'Difícil',hardDesc:'¡Cualquier minuto • Cronometrado!',
-    xhard:'Extra Difícil',xhardDesc:'¡Vence el reloj! 20s o 30s',
+    xhard:'Extra Difícil',xhardDesc:'¡Vence el reloj! 10s, 20s o 30s',
     tpTitle:'Modo Extra Difícil',tpSub:'Elige tu temporizador. ¡Responde antes de que se acabe o la pregunta cuenta como incorrecta!',
-    tp20s:'20 segundos',tp30s:'30 segundos',tpBack:'Volver',
+    tp10s:'10 segundos',tp20s:'20 segundos',tp30s:'30 segundos',tpBack:'Volver',
     timeUp:"¡Tiempo agotado! ⏰",
     parent:'Padres',practice:'Practicar',
     fpTitle:'Práctica libre',fpDrag:'¡Arrastra las manecillas!',
@@ -472,7 +475,7 @@ const LANGS = {
     hard:'صعب',hardDesc:'أي دقيقة • موقوت!',
     xhard:'صعب جداً',xhardDesc:'تحدَّ المؤقت! 20 أو 30 ثانية',
     tpTitle:'وضع صعب جداً',tpSub:'اختر مؤقتك. أجب قبل انتهاء الوقت أو يُحتسب السؤال خطأ!',
-    tp20s:'20 ثانية',tp30s:'30 ثانية',tpBack:'رجوع',
+    tp10s:'10 ثواني',tp20s:'20 ثانية',tp30s:'30 ثانية',tpBack:'رجوع',
     timeUp:"انتهى الوقت! ⏰",
     parent:'الوالدان',practice:'تدريب',
     fpTitle:'تدريب حر',fpDrag:'اسحب عقارب الساعة!',
@@ -515,7 +518,7 @@ function applyTranslations(){
   $('lbl-hard').textContent=l.hard;$('lbl-hard-desc').textContent=l.hardDesc;
   $('lbl-xhard').textContent=l.xhard;$('lbl-xhard-desc').textContent=l.xhardDesc;
   $('lbl-tp-title').textContent=l.tpTitle;$('lbl-tp-sub').textContent=l.tpSub;
-  $('lbl-tp-20s').textContent=l.tp20s;$('lbl-tp-30s').textContent=l.tp30s;
+  $('lbl-tp-10s').textContent=l.tp10s;$('lbl-tp-20s').textContent=l.tp20s;$('lbl-tp-30s').textContent=l.tp30s;
   $('lbl-tp-back').textContent=l.tpBack;
   $('lbl-parent').textContent=l.parent;$('lbl-practice').textContent=l.practice;
   // Free play
