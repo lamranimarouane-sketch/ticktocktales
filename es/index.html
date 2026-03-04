@@ -107,7 +107,7 @@
   @keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,30px)}}
   @keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,-40px)}}
   #app{position:relative;z-index:1;max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;}
-  .screen{display:none;flex-direction:column;flex:1;padding:24px 20px;animation:screenIn .4s cubic-bezier(.34,1.56,.64,1);}
+  .screen{display:none;flex-direction:column;flex:1;padding:24px 20px;animation:screenIn .4s cubic-bezier(.34,1.56,.64,1);overflow-y:auto;}
   .screen.active{display:flex;}
   @keyframes screenIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 
@@ -280,6 +280,27 @@
       <button class="btn btn-secondary" onclick="showParent()">👨‍👩‍👧 <span id="lbl-parent">Parent</span></button>
       <button class="btn btn-primary" onclick="showFreePlay()">🕐 <span id="lbl-practice">Practice</span></button>
     </div>
+
+<div style="background:#EEF2FF;padding:32px 24px;margin-top:8px;">
+  <div style="max-width:480px;margin:0 auto;">
+    <h1 id="seo-h1" style="font-family:'Fredoka One',cursive;font-size:22px;color:#5B4FE9;margin-bottom:4px;text-align:center;">Aprender a Decir la Hora</h1><p id="seo-sub" style="text-align:center;font-size:13px;color:#888;margin-bottom:12px;">🕐 Juego Interactivo Gratis para Niños</p>
+    <p id="seo-p1" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">TickTock Tales is a free educational game that helps children aged 5–9 learn to tell time on an analog clock. With three difficulty levels, kids start with whole hours and progress to reading any minute on the clock face.</p>
+    <p id="seo-p2" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Our fun clock reading practice includes instant feedback, a streak system, and collectible badges to keep kids motivated. The free play mode lets children drag the clock hands to explore time at their own pace.</p>
+    <p id="seo-p3" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Available in <strong>English, French, Spanish and Arabic</strong> — perfect for bilingual families, international schools, and homeschooling parents worldwide.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center;">
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">✅ 100% Free</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🚫 No Ads</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🔒 No Sign-up</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">📱 Works Offline</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🌍 4 Languages</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">👶 Ages 5–9</span>
+    </div>
+  </div>
+</div>
+<div style="text-align:center;padding:24px 20px 32px;font-size:14px;color:var(--text-light);font-family:'Fredoka',sans-serif;">
+  <p>© 2026 TickTock Tales · <a href="https://ticktocktales.app" style="color:var(--primary);text-decoration:none;">ticktocktales.app</a></p>
+  <p style="margin-top:4px">Made with ❤️ for curious kids everywhere · <a href="../privacy.html" style="color:var(--primary);text-decoration:none;">Privacy Policy</a></p>
+</div>
   </div>
 
   <!-- TIMER PICKER -->
@@ -690,13 +711,13 @@ function goHome(){clearTimer();showScreen('home');}
 
 function showParent(){
   showScreen('parent');
-  applyTranslations();
   $('pTotalScore').textContent=state.totalScore;
   $('pGames').textContent=state.totalGames;
   $('pStreak').textContent=state.globalBestStreak;
   const acc=state.totalAnswered>0?Math.round(state.totalCorrect/state.totalAnswered*100):0;
   $('pAccuracy').textContent=acc+'%';
   $('pAccuracyBar').style.width=acc+'%';
+  applyTranslations();
   renderBadges();
 }
 
@@ -1057,25 +1078,5 @@ applyTranslations();
     });
   }
 </script>
-<div style="background:#EEF2FF;padding:32px 24px;margin-top:8px;">
-  <div style="max-width:480px;margin:0 auto;">
-    <h1 id="seo-h1" style="font-family:'Fredoka One',cursive;font-size:22px;color:#5B4FE9;margin-bottom:4px;text-align:center;">Aprender a Decir la Hora</h1><p id="seo-sub" style="text-align:center;font-size:13px;color:#888;margin-bottom:12px;">🕐 Juego Interactivo Gratis para Niños</p>
-    <p id="seo-p1" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">TickTock Tales is a free educational game that helps children aged 5–9 learn to tell time on an analog clock. With three difficulty levels, kids start with whole hours and progress to reading any minute on the clock face.</p>
-    <p id="seo-p2" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Our fun clock reading practice includes instant feedback, a streak system, and collectible badges to keep kids motivated. The free play mode lets children drag the clock hands to explore time at their own pace.</p>
-    <p id="seo-p3" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Available in <strong>English, French, Spanish and Arabic</strong> — perfect for bilingual families, international schools, and homeschooling parents worldwide.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center;">
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">✅ 100% Free</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🚫 No Ads</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🔒 No Sign-up</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">📱 Works Offline</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🌍 4 Languages</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">👶 Ages 5–9</span>
-    </div>
-  </div>
-</div>
-<div style="text-align:center;padding:24px 20px 32px;font-size:14px;color:var(--text-light);font-family:'Fredoka',sans-serif;">
-  <p>© 2026 TickTock Tales · <a href="https://ticktocktales.app" style="color:var(--primary);text-decoration:none;">ticktocktales.app</a></p>
-  <p style="margin-top:4px">Made with ❤️ for curious kids everywhere · <a href="../privacy.html" style="color:var(--primary);text-decoration:none;">Privacy Policy</a></p>
-</div>
 </body>
 </html>
