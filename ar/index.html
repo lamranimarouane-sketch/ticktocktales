@@ -107,7 +107,7 @@
   @keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,30px)}}
   @keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,-40px)}}
   #app{position:relative;z-index:1;max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;}
-  .screen{display:none;flex-direction:column;flex:1;padding:24px 20px;animation:screenIn .4s cubic-bezier(.34,1.56,.64,1);overflow-y:auto;}
+  .screen{display:none;flex-direction:column;flex:1;padding:24px 20px;animation:screenIn .4s cubic-bezier(.34,1.56,.64,1);}
   .screen.active{display:flex;}
   @keyframes screenIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 
@@ -146,7 +146,7 @@
   .level-info h3{font-size:20px;font-weight:700;color:var(--text);}
   .level-info p{font-size:13px;color:var(--text-light);margin-top:2px;}
   .level-stars{margin-left:auto;font-size:15px;}
-  .home-footer{display:flex;gap:12px;margin-top:16px;padding-top:6px;padding-bottom:16px;}
+  .home-footer{display:flex;gap:12px;margin-top:auto;padding-top:6px;padding-bottom:20px;}
 
   /* BUTTONS */
   .btn{font-family:'Fredoka',sans-serif;font-size:18px;font-weight:600;padding:13px 22px;border-radius:16px;border:none;cursor:pointer;transition:all .2s cubic-bezier(.34,1.56,.64,1);display:inline-flex;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden;}
@@ -276,32 +276,10 @@
         <div class="level-stars">⭐⭐⭐⭐</div>
       </div>
     </div>
-
-<div style="background:#EEF2FF;padding:32px 24px;margin-top:8px;">
-  <div style="max-width:480px;margin:0 auto;">
-    <h1 id="seo-h1" style="font-family:'Fredoka One',cursive;font-size:22px;color:#5B4FE9;margin-bottom:4px;text-align:center;">تعلم قراءة الساعة</h1><p id="seo-sub" style="text-align:center;font-size:13px;color:#888;margin-bottom:12px;">🕐 لعبة تفاعلية مجانية للأطفال</p>
-    <p id="seo-p1" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">TickTock Tales is a free educational game that helps children aged 5–9 learn to tell time on an analog clock. With three difficulty levels, kids start with whole hours and progress to reading any minute on the clock face.</p>
-    <p id="seo-p2" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Our fun clock reading practice includes instant feedback, a streak system, and collectible badges to keep kids motivated. The free play mode lets children drag the clock hands to explore time at their own pace.</p>
-    <p id="seo-p3" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Available in <strong>English, French, Spanish and Arabic</strong> — perfect for bilingual families, international schools, and homeschooling parents worldwide.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center;">
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">✅ 100% Free</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🚫 No Ads</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🔒 No Sign-up</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">📱 Works Offline</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🌍 4 Languages</span>
-      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">👶 Ages 5–9</span>
-    </div>
-  </div>
-</div>
-<div style="text-align:center;padding:24px 20px 32px;font-size:14px;color:var(--text-light);font-family:'Fredoka',sans-serif;">
-  <p>© 2026 TickTock Tales · <a href="https://ticktocktales.app" style="color:var(--primary);text-decoration:none;">ticktocktales.app</a></p>
-  <p style="margin-top:4px">Made with ❤️ for curious kids everywhere · <a href="../privacy.html" style="color:var(--primary);text-decoration:none;">Privacy Policy</a></p>
-</div>
     <div class="home-footer">
       <button class="btn btn-secondary" onclick="showParent()">👨‍👩‍👧 <span id="lbl-parent">Parent</span></button>
       <button class="btn btn-primary" onclick="showFreePlay()">🕐 <span id="lbl-practice">Practice</span></button>
     </div>
-
   </div>
 
   <!-- TIMER PICKER -->
@@ -414,6 +392,27 @@
       🗑️ <span id="p-btn-reset">Reset Progress</span>
     </button>
   </div>
+
+<!-- SEO CONTENT - outside app, below fold -->
+<div style="background:#EEF2FF;padding:32px 24px;margin-top:8px;">
+  <div style="max-width:480px;margin:0 auto;">
+    <h1 id="seo-h1" style="font-family:'Fredoka One',cursive;font-size:22px;color:#5B4FE9;margin-bottom:4px;text-align:center;">تعلم قراءة الساعة</h1><p id="seo-sub" style="text-align:center;font-size:13px;color:#888;margin-bottom:12px;">🕐 لعبة تفاعلية مجانية للأطفال</p>
+    <p id="seo-p1" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">TickTock Tales is a free educational game that helps children aged 5–9 learn to tell time on an analog clock. With three difficulty levels, kids start with whole hours and progress to reading any minute on the clock face.</p>
+    <p id="seo-p2" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Our fun clock reading practice includes instant feedback, a streak system, and collectible badges to keep kids motivated. The free play mode lets children drag the clock hands to explore time at their own pace.</p>
+    <p id="seo-p3" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Available in <strong>English, French, Spanish and Arabic</strong> — perfect for bilingual families, international schools, and homeschooling parents worldwide.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center;">
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">✅ 100% Free</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🚫 No Ads</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🔒 No Sign-up</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">📱 Works Offline</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">🌍 4 Languages</span>
+      <span style="background:white;border-radius:99px;padding:5px 13px;font-size:13px;color:#5B4FE9;font-weight:600;">👶 Ages 5–9</span>
+    </div>
+  </div>
+</div>
+<div style="text-align:center;padding:24px 20px 32px;font-size:14px;color:var(--text-light);font-family:'Fredoka',sans-serif;">
+  <p>© 2026 TickTock Tales · <a href="https://ticktocktales.app" style="color:var(--primary);text-decoration:none;">ticktocktales.app</a></p>
+  <p style="margin-top:4px">Made with ❤️ for curious kids everywhere · <a href="../privacy.html" style="color:var(--primary);text-decoration:none;">Privacy Policy</a></p>
 </div>
 
 <script>
@@ -540,16 +539,16 @@ function T(k){return (LANGS[currentLang]||{})[k]||(LANGS.en||{})[k]||k;}
 function $(id){return document.getElementById(id);}
 
 function setLang(l,btn){
-  // Redirect to language subfolder URL
-  const urlMap={en:'/',fr:'/fr/',es:'/es/',ar:'/ar/'};
-  const current=window.location.pathname;
-  const target=urlMap[l];
-  // Only redirect if not already on correct page
-  const isCorrect=(l==='en'&&(current==='/'||current==='/index.html'||!current.match(/^\/(fr|es|ar)\//)))||current.startsWith(target);
-  if(!isCorrect){window.location.href=target;return;}
   currentLang=l;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   if(btn)btn.classList.add('active');
+  else{
+    document.querySelectorAll('.lang-btn').forEach(b=>{
+      const m=b.getAttribute('onclick').match(/setLang\('(\w+)'/);
+      if(m&&m[1]===l)b.classList.add('active');
+    });
+  }
+  document.documentElement.lang=l;
   document.dir=l==='ar'?'rtl':'ltr';
   applyTranslations();
 }
@@ -557,51 +556,44 @@ function setLang(l,btn){
 function initLangFromURL(){
   const path=window.location.pathname;
   let lang='en';
-  if(path.startsWith('/fr/'))lang='fr';
-  else if(path.startsWith('/es/'))lang='es';
-  else if(path.startsWith('/ar/'))lang='ar';
-  currentLang=lang;
-  document.querySelectorAll('.lang-btn').forEach(b=>{
-    const bl=b.getAttribute('onclick').match(/setLang\('(\w+)'/);
-    if(bl&&bl[1]===lang)b.classList.add('active');
-    else b.classList.remove('active');
-  });
-  document.dir=lang==='ar'?'rtl':'ltr';
+  if(path.includes('/fr/'))lang='fr';
+  else if(path.includes('/es/'))lang='es';
+  else if(path.includes('/ar/'))lang='ar';
+  setLang(lang,null);
 }
 
 function applyTranslations(){
-  const l=LANGS[currentLang];
+  const l=LANGS[currentLang]||LANGS.en;
+  function set(id,val,html){const el=$(id);if(el){if(html)el.innerHTML=val;else el.textContent=val;}}
   // Home
-  $('home-tagline').textContent=l.tagline;
-  $('home-intro').textContent=l.intro;
-  if($('seo-h1')){$('seo-h1').textContent=l.seoH1;}
-  if($('seo-sub')){$('seo-sub').textContent=l.seoSub;}
-  if($('seo-p1')){$('seo-p1').textContent=l.seoP1;}
-  if($('seo-p2')){$('seo-p2').textContent=l.seoP2;}
-  if($('seo-p3')){$('seo-p3').innerHTML=l.seoP3;}
-  $('lbl-easy').textContent=l.easy;$('lbl-easy-desc').textContent=l.easyDesc;
-  $('lbl-medium').textContent=l.medium;$('lbl-medium-desc').textContent=l.mediumDesc;
-  $('lbl-hard').textContent=l.hard;$('lbl-hard-desc').textContent=l.hardDesc;
-  $('lbl-xhard').textContent=l.xhard;$('lbl-xhard-desc').textContent=l.xhardDesc;
-  $('lbl-tp-title').textContent=l.tpTitle;$('lbl-tp-sub').textContent=l.tpSub;
-  $('lbl-tp-10s').textContent=l.tp10s;$('lbl-tp-20s').textContent=l.tp20s;$('lbl-tp-30s').textContent=l.tp30s;
-  $('lbl-tp-back').textContent=l.tpBack;
-  $('lbl-parent').textContent=l.parent;$('lbl-practice').textContent=l.practice;
+  set('home-tagline',l.tagline);
+  set('home-intro',l.intro);
+  set('seo-h1',l.seoH1);
+  set('seo-sub',l.seoSub);
+  set('seo-p1',l.seoP1);
+  set('seo-p2',l.seoP2);
+  set('seo-p3',l.seoP3,true);
+  set('lbl-easy',l.easy);set('lbl-easy-desc',l.easyDesc);
+  set('lbl-medium',l.medium);set('lbl-medium-desc',l.mediumDesc);
+  set('lbl-hard',l.hard);set('lbl-hard-desc',l.hardDesc);
+  set('lbl-xhard',l.xhard);set('lbl-xhard-desc',l.xhardDesc);
+  set('lbl-tp-title',l.tpTitle);set('lbl-tp-sub',l.tpSub);
+  set('lbl-tp-10s',l.tp10s);set('lbl-tp-20s',l.tp20s);set('lbl-tp-30s',l.tp30s);
+  set('lbl-tp-back',l.tpBack);
+  set('lbl-parent',l.parent);set('lbl-practice',l.practice);
   // Free play
-  $('lbl-fp-title').textContent=l.fpTitle;$('lbl-fp-drag').textContent=l.fpDrag;
+  set('lbl-fp-title',l.fpTitle);set('lbl-fp-drag',l.fpDrag);
   // Result labels
-  $('res-lbl-acc').textContent=l.resAcc;$('res-lbl-streak').textContent=l.resStreak;
-  $('res-lbl-answered').textContent=l.resAnswered;
-  $('res-badge-hdr').textContent=l.resBadgeHdr;
-  $('res-btn-home').textContent=l.resHome;$('res-btn-again').textContent=l.resAgain;
+  set('res-lbl-acc',l.resAcc);set('res-lbl-streak',l.resStreak);set('res-lbl-answered',l.resAnswered);
+  set('res-badge-hdr',l.resBadgeHdr);set('res-btn-home',l.resHome);set('res-btn-again',l.resAgain);
   // Parent labels
-  $('parent-title').textContent=l.parentTitle;
-  $('p-lbl-score').textContent=l.pScore;$('p-lbl-score-sub').textContent=l.pScoreSub;
-  $('p-lbl-games').textContent=l.pGames;$('p-lbl-streak').textContent=l.pStreak;
-  $('p-lbl-row').textContent=l.pRow;$('p-lbl-acc').textContent=l.pAcc;
-  $('p-lbl-badges').textContent=l.pBadges;$('p-btn-reset').textContent=l.pReset;
+  set('parent-title',l.parentTitle);
+  set('p-lbl-score',l.pScore);set('p-lbl-score-sub',l.pScoreSub);
+  set('p-lbl-games',l.pGames);set('p-lbl-streak',l.pStreak);
+  set('p-lbl-row',l.pRow);set('p-lbl-acc',l.pAcc);
+  set('p-lbl-badges',l.pBadges);set('p-btn-reset',l.pReset);
   // Re-render badge grid if parent screen visible
-  if($('screen-parent').classList.contains('active'))renderBadges();
+  if($('screen-parent')&&$('screen-parent').classList.contains('active'))renderBadges();
 }
 
 // =====================================================================
@@ -712,6 +704,7 @@ function goHome(){clearTimer();showScreen('home');}
 
 function showParent(){
   showScreen('parent');
+  applyTranslations();
   $('pTotalScore').textContent=state.totalScore;
   $('pGames').textContent=state.totalGames;
   $('pStreak').textContent=state.globalBestStreak;
