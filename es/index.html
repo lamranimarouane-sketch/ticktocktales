@@ -146,7 +146,7 @@
   .level-info h3{font-size:20px;font-weight:700;color:var(--text);}
   .level-info p{font-size:13px;color:var(--text-light);margin-top:2px;}
   .level-stars{margin-left:auto;font-size:15px;}
-  .home-footer{display:flex;gap:12px;margin-top:auto;padding-top:6px;}
+  .home-footer{display:flex;gap:12px;margin-top:16px;padding-top:6px;padding-bottom:16px;}
 
   /* BUTTONS */
   .btn{font-family:'Fredoka',sans-serif;font-size:18px;font-weight:600;padding:13px 22px;border-radius:16px;border:none;cursor:pointer;transition:all .2s cubic-bezier(.34,1.56,.64,1);display:inline-flex;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden;}
@@ -276,10 +276,6 @@
         <div class="level-stars">⭐⭐⭐⭐</div>
       </div>
     </div>
-    <div class="home-footer">
-      <button class="btn btn-secondary" onclick="showParent()">👨‍👩‍👧 <span id="lbl-parent">Parent</span></button>
-      <button class="btn btn-primary" onclick="showFreePlay()">🕐 <span id="lbl-practice">Practice</span></button>
-    </div>
 
 <div style="background:#EEF2FF;padding:32px 24px;margin-top:8px;">
   <div style="max-width:480px;margin:0 auto;">
@@ -301,6 +297,11 @@
   <p>© 2026 TickTock Tales · <a href="https://ticktocktales.app" style="color:var(--primary);text-decoration:none;">ticktocktales.app</a></p>
   <p style="margin-top:4px">Made with ❤️ for curious kids everywhere · <a href="../privacy.html" style="color:var(--primary);text-decoration:none;">Privacy Policy</a></p>
 </div>
+    <div class="home-footer">
+      <button class="btn btn-secondary" onclick="showParent()">👨‍👩‍👧 <span id="lbl-parent">Parent</span></button>
+      <button class="btn btn-primary" onclick="showFreePlay()">🕐 <span id="lbl-practice">Practice</span></button>
+    </div>
+
   </div>
 
   <!-- TIMER PICKER -->
