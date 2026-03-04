@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -10,11 +10,11 @@
 <meta name="apple-mobile-web-app-title" content="TickTock Tales">
 
 <!-- SEO -->
-<meta name="description" content="TickTock Tales es un juego interactivo gratuito para aprender a decir la hora para niños de 5 a 9 años. Sin anuncios, sin registro.">
-<meta name="keywords" content="aprender la hora, juego reloj niños, leer el reloj, juego educativo gratis, reloj analógico niños">
+<meta name="description" content="TickTock Tales est un jeu interactif gratuit pour apprendre l'heure aux enfants de 5 à 9 ans. Quiz, badges et horloge analogique. Sans pub, sans inscription.">
+<meta name="keywords" content="apprendre l'heure, jeu horloge enfants, lire l'heure enfant, jeu éducatif gratuit, horloge analogique enfants">
 <meta name="author" content="TickTock Tales">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://ticktocktales.app/es/">
+<link rel="canonical" href="https://ticktocktales.app/fr/">
 
 <!-- Hreflang — language-specific URLs -->
 <link rel="alternate" hreflang="en" href="https://ticktocktales.app/">
@@ -25,15 +25,15 @@
 
 <!-- Open Graph (Facebook, WhatsApp, LinkedIn previews) -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ticktocktales.app/es/">
+<meta property="og:url" content="https://ticktocktales.app/fr/">
 <meta property="og:title" content="TickTock Tales — Free Clock Learning Game for Kids">
-<meta property="og:description" content="Juega Ahora — Juego interactivo gratuito para aprender la hora para niños. Sin anuncios. 4 idiomas.">
+<meta property="og:description" content="Joue Maintenant — Jeu interactif gratuit pour apprendre l'heure aux enfants de 5 à 9 ans. Sans pub. 4 langues.">
 <meta property="og:image" content="https://ticktocktales.app/icon-512.png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
 <meta property="og:image:alt" content="TickTock Tales — Kids Clock Learning Game">
 <meta property="og:site_name" content="TickTock Tales">
-<meta property="og:locale" content="es_ES">
+<meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="ar_SA">
@@ -41,7 +41,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TickTock Tales — Free Clock Learning Game for Kids">
-<meta name="twitter:description" content="Juega Ahora — Juego gratuito para aprender la hora. Cuestionarios y badges. Sin anuncios.">
+<meta name="twitter:description" content="Joue Maintenant — Jeu gratuit pour apprendre l'heure. Quiz et badges. Sans pub.">
 <meta name="twitter:image" content="https://ticktocktales.app/icon-512.png">
 
 <!-- Structured Data (Google Rich Results) -->
@@ -90,7 +90,7 @@
 <link rel="manifest" href="../manifest.json">
 <link rel="apple-touch-icon" href="../icon-512.png">
 <link rel="icon" href="../icon-512.png">
-<title>TickTock Tales — Juego Gratis para Aprender la Hora | Reloj para Niños</title>
+<title>TickTock Tales — Jeu Gratuit pour Apprendre l'Heure | Horloge Enfants</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -238,7 +238,7 @@
     <div class="home-header">
       <span class="clock-emoji-spin">🕐</span>
       <div class="app-logo">TickTock Tales</div>
-      <div class="app-tagline" id="home-tagline">Aprende la hora — es divertido! ⭐</div>
+      <div class="app-tagline" id="home-tagline">Apprends l'heure — c'est amusant ! ⭐</div>
     </div>
     <div class="lang-row">
       <button class="lang-btn active" onclick="setLang('en',this)">🇬🇧 EN</button>
@@ -247,7 +247,7 @@
       <button class="lang-btn" onclick="setLang('ar',this)">🇸🇦 AR</button>
     </div>
     <div style="background:var(--card-bg);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow);margin-bottom:14px;text-align:center;border-left:4px solid var(--primary);">
-      <p id="home-intro" style="font-size:15px;color:var(--text);line-height:1.6;">Tic tac! 🌟 Sabes que hora es? Juega, aprende y colecciona insignias!</p>
+      <p id="home-intro" style="font-size:15px;color:var(--text);line-height:1.6;">Tic tac ! 🌟 Tu sais quelle heure il est ? Joue, apprends et collecte des badges !</p>
       <div style="display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap;">
         <span style="background:rgba(107,203,119,.15);color:#3a8a40;font-size:13px;font-weight:600;padding:5px 13px;border-radius:99px;">✅ 100% Free</span>
         <span style="background:rgba(107,203,119,.15);color:#3a8a40;font-size:13px;font-weight:600;padding:5px 13px;border-radius:99px;">🚫 No Ads</span>
@@ -257,22 +257,22 @@
     <div class="level-grid">
       <div class="level-card easy" onclick="startGame('easy')">
         <div class="level-icon">😊</div>
-        <div class="level-info"><h3 id="lbl-easy">Fácil</h3><p id="lbl-easy-desc">Solo horas enteras</p></div>
+        <div class="level-info"><h3 id="lbl-easy">Facile</h3><p id="lbl-easy-desc">Heures entières seulement</p></div>
         <div class="level-stars">⭐</div>
       </div>
       <div class="level-card medium" id="card-medium" onclick="startGame('medium')">
         <div class="level-icon">🤔</div>
-        <div class="level-info"><h3 id="lbl-medium">Medio</h3><p id="lbl-medium-desc">Medias y cuartos de hora</p></div>
+        <div class="level-info"><h3 id="lbl-medium">Moyen</h3><p id="lbl-medium-desc">Demi et quarts d'heure</p></div>
         <div class="level-stars">⭐⭐</div>
       </div>
       <div class="level-card hard" id="card-hard" onclick="startGame('hard')">
         <div class="level-icon">🔥</div>
-        <div class="level-info"><h3 id="lbl-hard">Difícil</h3><p id="lbl-hard-desc">Cualquier minuto • Cronometrado!</p></div>
+        <div class="level-info"><h3 id="lbl-hard">Difficile</h3><p id="lbl-hard-desc">N'importe quelle minute • Chronométré !</p></div>
         <div class="level-stars">⭐⭐⭐</div>
       </div>
       <div class="level-card xhard" id="card-xhard" onclick="showTimerPicker()">
         <div class="level-icon">💀</div>
-        <div class="level-info"><h3 id="lbl-xhard">Extra Difícil</h3><p id="lbl-xhard-desc">Vence el reloj! 10s, 20s o 30s</p></div>
+        <div class="level-info"><h3 id="lbl-xhard">Extra Difficile</h3><p id="lbl-xhard-desc">Bats le chrono ! 10s, 20s ou 30s</p></div>
         <div class="level-stars">⭐⭐⭐⭐</div>
       </div>
     </div>
@@ -513,16 +513,38 @@ const LANGS = {
   },
 };
 
-let currentLang='es';
+let currentLang='fr';
 function T(k){return (LANGS[currentLang]||{})[k]||(LANGS.en||{})[k]||k;}
 function $(id){return document.getElementById(id);}
 
 function setLang(l,btn){
+  // Redirect to language subfolder URL
+  const urlMap={en:'/',fr:'/fr/',es:'/es/',ar:'/ar/'};
+  const current=window.location.pathname;
+  const target=urlMap[l];
+  // Only redirect if not already on correct page
+  const isCorrect=(l==='en'&&(current==='/'||current==='/index.html'||!current.match(/^\/(fr|es|ar)\//)))||current.startsWith(target);
+  if(!isCorrect){window.location.href=target;return;}
   currentLang=l;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   if(btn)btn.classList.add('active');
   document.dir=l==='ar'?'rtl':'ltr';
   applyTranslations();
+}
+
+function initLangFromURL(){
+  const path=window.location.pathname;
+  let lang='en';
+  if(path.startsWith('/fr/'))lang='fr';
+  else if(path.startsWith('/es/'))lang='es';
+  else if(path.startsWith('/ar/'))lang='ar';
+  currentLang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    const bl=b.getAttribute('onclick').match(/setLang\('(\w+)'/);
+    if(bl&&bl[1]===lang)b.classList.add('active');
+    else b.classList.remove('active');
+  });
+  document.dir=lang==='ar'?'rtl':'ltr';
 }
 
 function applyTranslations(){
@@ -1021,6 +1043,7 @@ function animConf(){
 // =====================================================================
 // INIT
 // =====================================================================
+initLangFromURL();
 applyTranslations();
 </script>
 <script>
@@ -1036,7 +1059,7 @@ applyTranslations();
 </script>
 <div style="background:#EEF2FF;padding:32px 24px;margin-top:8px;">
   <div style="max-width:480px;margin:0 auto;">
-    <h1 id="seo-h1" style="font-family:'Fredoka One',cursive;font-size:22px;color:#5B4FE9;margin-bottom:4px;text-align:center;">Aprender a Decir la Hora</h1><p id="seo-sub" style="text-align:center;font-size:13px;color:#888;margin-bottom:12px;">🕐 Juego Interactivo Gratis para Niños</p>
+    <h1 id="seo-h1" style="font-family:'Fredoka One',cursive;font-size:22px;color:#5B4FE9;margin-bottom:4px;text-align:center;">Apprendre à Lire l'Heure</h1><p id="seo-sub" style="text-align:center;font-size:13px;color:#888;margin-bottom:12px;">🕐 Jeu Interactif Gratuit pour Enfants</p>
     <p id="seo-p1" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">TickTock Tales is a free educational game that helps children aged 5–9 learn to tell time on an analog clock. With three difficulty levels, kids start with whole hours and progress to reading any minute on the clock face.</p>
     <p id="seo-p2" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Our fun clock reading practice includes instant feedback, a streak system, and collectible badges to keep kids motivated. The free play mode lets children drag the clock hands to explore time at their own pace.</p>
     <p id="seo-p3" style="font-size:14px;color:#555;line-height:1.7;margin-bottom:10px;">Available in <strong>English, French, Spanish and Arabic</strong> — perfect for bilingual families, international schools, and homeschooling parents worldwide.</p>
