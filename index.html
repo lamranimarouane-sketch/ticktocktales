@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-title" content="TickTock Tales">
 
 <!-- SEO -->
-<meta name="description" content="TickTock Tales is a free interactive clock for kids ages 5-9. Learn to tell time with fun quizzes, badges and analog clock practice. Available in English, French, Spanish and Arabic. No ads, no sign-up.">
+<meta name="description" content="Free clock reading game for kids ages 5–9. Learn to tell time with fun quizzes, badges &amp; analog clock practice. 4 languages. No ads, no sign-up.">
 <meta name="keywords" content="learn to tell time, interactive clock for kids, free clock reading game, clock reading game for kids, tell time game, analog clock practice, free educational game, homeschool clock game, kids time learning">
 <meta name="author" content="TickTock Tales">
 <meta name="robots" content="index, follow">
@@ -91,7 +91,7 @@
 <link rel="manifest" href="https://lamranimarouane-sketch.github.io/ticktocktales/manifest.json">
 <link rel="apple-touch-icon" href="icon-512.png">
 <link rel="icon" href="icon-512.png">
-<title>TickTock Tales — Free Clock Reading Game for Kids | Learn to Tell Time</title>
+<title>TickTock Tales — Free Clock Game for Kids | Tell Time</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -539,6 +539,14 @@ function T(k){return (LANGS[currentLang]||{})[k]||(LANGS.en||{})[k]||k;}
 function $(id){return document.getElementById(id);}
 
 function setLang(l,btn){
+  // If switching to EN from a subfolder page, go to root
+  const path=window.location.pathname;
+  const inSubfolder=path.includes('/fr/')||path.includes('/es/')||path.includes('/ar/');
+  if(l==='en'&&inSubfolder){window.location.href='/';return;}
+  // If switching to a language subfolder from the root EN page, redirect there
+  const subMap={fr:'/fr/',es:'/es/',ar:'/ar/'};
+  if(subMap[l]&&!path.includes('/'+l+'/')){window.location.href=subMap[l];return;}
+  // Already on correct page — just switch in-page
   currentLang=l;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   if(btn)btn.classList.add('active');
