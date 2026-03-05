@@ -293,6 +293,13 @@
       <button class="btn btn-secondary" onclick="showParent()">👨‍👩‍👧 <span id="lbl-parent">Parent</span></button>
       <button class="btn btn-primary" onclick="showFreePlay()">🕐 <span id="lbl-practice">Practice</span></button>
     </div>
+    <a href="blog/" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg);border-radius:16px;padding:13px 20px;box-shadow:var(--shadow);text-decoration:none;border:2px solid rgba(91,79,233,.15);transition:all .2s;margin-top:2px;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='rgba(91,79,233,.15)'">
+      <span style="font-size:20px;">📚</span>
+      <div style="text-align:left;">
+        <div style="font-family:'Fredoka One',cursive;font-size:15px;color:var(--primary);">Tips & Guides Blog</div>
+        <div style="font-size:12px;color:var(--text-light);margin-top:1px;">How to teach kids to tell time →</div>
+      </div>
+    </a>
   </div>
 
   <!-- TIMER PICKER -->
@@ -1072,6 +1079,7 @@ function animConf(){
 // =====================================================================
 initLangFromURL();
 applyTranslations();
+
 </script>
 <script>
   if ('serviceWorker' in navigator) {
