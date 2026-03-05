@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#5B4FE9">
+<title>TickTock Tales Blog — Tips for Teaching Kids to Tell Time</title>
+<meta name="description" content="Practical tips, activities and free resources to help parents and teachers teach kids to tell time. From analog clocks to fun games — we cover it all.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ticktocktales.app/blog/">
+<link rel="alternate" hreflang="en" href="https://ticktocktales.app/blog/">
+<link rel="alternate" hreflang="x-default" href="https://ticktocktales.app/blog/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ticktocktales.app/blog/">
+<meta property="og:title" content="TickTock Tales Blog — Tips for Teaching Kids to Tell Time">
+<meta property="og:description" content="Practical tips, activities and free resources to help parents and teachers teach kids to tell time.">
+<meta property="og:image" content="https://ticktocktales.app/icon-512.png">
+<link rel="icon" href="../icon-512.png">
+<link rel="apple-touch-icon" href="../icon-512.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFF9F0;--primary:#5B4FE9;--primary-light:#8B82F0;
+    --secondary:#FF6B6B;--accent:#FFD93D;--green:#6BCB77;
+    --card:#FFFFFF;--text:#2D2B55;--text-light:#8884C0;
+    --shadow:0 8px 32px rgba(91,79,233,0.12);--radius:20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--text);}
 
+  /* NAV */
+  nav{background:white;box-shadow:0 2px 16px rgba(91,79,233,.1);position:sticky;top:0;z-index:100;}
+  .nav-inner{max-width:720px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;}
+  .nav-logo-icon{font-size:24px;}
+  .nav-logo-text{font-family:'Fredoka One',cursive;font-size:20px;color:var(--primary);}
+  .nav-back{font-size:14px;font-weight:600;color:var(--text-light);text-decoration:none;transition:color .2s;}
+  .nav-back:hover{color:var(--primary);}
+  .nav-cta{background:var(--primary);color:white;border-radius:12px;padding:8px 18px;font-size:14px;font-weight:700;text-decoration:none;transition:transform .2s;}
+  .nav-cta:hover{transform:translateY(-2px);}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#5B4FE9,#8B82F0);padding:56px 24px 64px;text-align:center;}
+  .hero-tag{display:inline-block;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.3);border-radius:99px;padding:6px 16px;font-size:13px;font-weight:600;color:white;margin-bottom:20px;}
+  .hero h1{font-family:'Fredoka One',cursive;font-size:38px;color:white;line-height:1.15;margin-bottom:12px;text-shadow:0 2px 16px rgba(0,0,0,.15);}
+  .hero p{font-size:16px;color:rgba(255,255,255,.85);max-width:480px;margin:0 auto;line-height:1.6;}
+
+  /* POSTS */
+  .posts-section{max-width:720px;margin:0 auto;padding:48px 24px;}
+  .section-label{font-size:11px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;}
+
+  .post-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:24px;display:flex;transition:transform .25s;border:2px solid transparent;}
+  .post-card:hover{transform:translateY(-4px);border-color:var(--primary-light);}
+  .post-card a{text-decoration:none;color:inherit;display:flex;width:100%;}
+  .post-thumb{width:160px;min-height:140px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:56px;background:linear-gradient(135deg,#EEF2FF,#E8F5E9);}
+  .post-body{padding:20px 22px;display:flex;flex-direction:column;justify-content:center;}
+  .post-meta{display:flex;gap:10px;align-items:center;margin-bottom:8px;}
+  .post-tag{background:rgba(91,79,233,.1);color:var(--primary);border-radius:99px;padding:3px 10px;font-size:11px;font-weight:700;}
+  .post-date{font-size:12px;color:var(--text-light);}
+  .post-title{font-family:'Fredoka One',cursive;font-size:20px;color:var(--text);line-height:1.2;margin-bottom:8px;}
+  .post-excerpt{font-size:13px;color:var(--text-light);line-height:1.6;}
+  .post-read{font-size:12px;font-weight:700;color:var(--primary);margin-top:10px;}
+
+  /* COMING SOON */
+  .coming-soon{background:var(--card);border-radius:var(--radius);padding:28px 24px;text-align:center;box-shadow:var(--shadow);border:2px dashed rgba(91,79,233,.2);}
+  .coming-soon p{font-size:14px;color:var(--text-light);line-height:1.6;}
+  .coming-soon strong{color:var(--primary);}
+
+  /* FOOTER */
+  footer{text-align:center;padding:28px 20px;font-size:13px;color:var(--text-light);}
+  footer a{color:var(--primary);text-decoration:none;font-weight:600;}
+
+  @media(max-width:540px){
+    .hero h1{font-size:28px;}
+    .post-thumb{width:100px;font-size:40px;}
+    .post-title{font-size:17px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="../">
+      <span class="nav-logo-icon">🕐</span>
+      <span class="nav-logo-text">TickTock Tales</span>
+    </a>
+    <a class="nav-back" href="../">← Back to game</a>
+    <a class="nav-cta" href="../">Play Free →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">📚 For Parents & Teachers</div>
+  <h1>Tips to Help Kids<br>Master Telling Time</h1>
+  <p>Practical guides, fun activities and free resources — so every child can read the clock with confidence.</p>
+</div>
+
+<div class="posts-section">
+  <div class="section-label">Latest Articles</div>
+
+  <div class="post-card">
+    <a href="how-to-teach-kids-to-tell-time/">
+      <div class="post-thumb">🕐</div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-tag">Guide</span>
+          <span class="post-date">March 2026</span>
+        </div>
+        <div class="post-title">How to Teach Kids to Tell Time (Step-by-Step Guide)</div>
+        <div class="post-excerpt">From whole hours to minutes — a simple progression that works for ages 5 to 9, at home or in the classroom.</div>
+        <div class="post-read">Read article →</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="coming-soon">
+    <div style="font-size:32px;margin-bottom:10px;">✍️</div>
+    <p>More articles coming soon — <strong>best clock activities for kindergarten</strong>, <strong>when do kids learn to tell time?</strong>, and more.</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TickTock Tales · <a href="https://ticktocktales.app">ticktocktales.app</a> · <a href="../privacy.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
