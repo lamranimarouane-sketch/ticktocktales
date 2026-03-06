@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../icon-512.png">
-<title>Política de Privacidad — TickTock Tales</title>
-<meta name="description" content="Política de privacidad de TickTock Tales — juego gratuito para aprender la hora. Sin recopilación de datos, cumple con COPPA, seguro para niños.">
+<title>Politique de Confidentialité — TickTock Tales</title>
+<meta name="description" content="Politique de confidentialité de TickTock Tales — jeu gratuit pour apprendre l'heure. Aucune collecte de données, conforme COPPA, sécurisé pour les enfants.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://ticktocktales.app/es/privacy.html">
+<link rel="canonical" href="https://ticktocktales.app/fr/privacy.html">
 <link rel="alternate" hreflang="en" href="https://ticktocktales.app/privacy.html">
 <link rel="alternate" hreflang="fr" href="https://ticktocktales.app/fr/privacy.html">
 <link rel="alternate" hreflang="es" href="https://ticktocktales.app/es/privacy.html">
 <link rel="alternate" hreflang="ar" href="https://ticktocktales.app/ar/privacy.html">
 <link rel="alternate" hreflang="x-default" href="https://ticktocktales.app/privacy.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ticktocktales.app/es/privacy.html">
-<meta property="og:title" content="Política de Privacidad — TickTock Tales">
-<meta property="og:description" content="TickTock Tales no recopila datos personales. Cumple con COPPA y RGPD. Seguro para niños de 5 a 9 años.">
+<meta property="og:url" content="https://ticktocktales.app/fr/privacy.html">
+<meta property="og:title" content="Politique de Confidentialité — TickTock Tales">
+<meta property="og:description" content="TickTock Tales ne collecte aucune donnée personnelle. Conforme COPPA et RGPD. Sécurisé pour les enfants de 5 à 9 ans.">
 <meta property="og:image" content="https://ticktocktales.app/icon-512.png">
 <meta property="og:site_name" content="TickTock Tales">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -62,30 +62,44 @@
   .footer{text-align:center;padding:24px 24px 36px;font-size:14px;color:var(--text-light);position:relative;z-index:1;}
   .footer a{color:var(--primary);text-decoration:none;}
   @media(max-width:480px){.card{padding:18px 16px;}.app-logo{font-size:30px;}.clock-emoji-spin{font-size:44px;}.hero h1{font-size:22px;}}
+
+  /* ── Nav override ── */
+  .ttl-nav{background:white!important;box-shadow:0 2px 16px rgba(91,79,233,.1)!important;position:sticky!important;top:0!important;z-index:200!important;padding:0!important;}
+  .ttl-nav-inner{max-width:760px;margin:0 auto;padding:12px 24px;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;flex-wrap:wrap!important;direction:ltr!important;}
+  .ttl-nav-logo{display:flex!important;align-items:center!important;gap:8px!important;text-decoration:none!important;}
+  .ttl-nav-logo-icon{font-size:22px!important;animation:none!important;}
+  .ttl-nav-logo-text{font-family:'Fredoka One',cursive!important;font-size:18px!important;color:#5B4FE9!important;}
+  .ttl-nav-right{display:flex!important;align-items:center!important;gap:10px!important;flex-wrap:wrap!important;direction:ltr!important;}
+  .ttl-lang-row{display:flex!important;gap:4px!important;flex-wrap:nowrap!important;}
+  .ttl-lb,.ttl-lb-active{font-size:12px!important;font-weight:700!important;border-radius:8px!important;padding:4px 8px!important;text-decoration:none!important;border:1.5px solid rgba(91,79,233,.2)!important;color:#8884C0!important;background:none!important;cursor:pointer!important;font-family:'Fredoka',sans-serif!important;}
+  .ttl-lb-active{background:#5B4FE9!important;color:white!important;border-color:#5B4FE9!important;}
+  .ttl-nav-back{font-size:13px!important;font-weight:600!important;color:#8884C0!important;text-decoration:none!important;}
+  .ttl-nav-cta{background:#5B4FE9!important;color:white!important;border-radius:12px!important;padding:7px 16px!important;font-size:13px!important;font-weight:700!important;text-decoration:none!important;}
+  /* ── Privacy hero override ── */
+  .ttl-privacy-hero{background:linear-gradient(135deg,#5B4FE9,#8B82F0)!important;padding:44px 24px 52px!important;text-align:center!important;position:relative!important;z-index:1!important;}
+  .ttl-privacy-hero h1{font-family:'Fredoka One',cursive!important;font-size:32px!important;color:white!important;line-height:1.15!important;margin:0!important;}
+
 </style>
 </head>
 <body>
-
-<div class="hero">
-  <a href="../" class="app-logo-wrap">
-    <span class="clock-emoji-spin">🕐</span>
-    <div class="logo-text">
-      <div class="app-logo">TickTock Tales</div>
-      <div class="app-tagline" id="hero-tagline">¡Aprende la hora — es divertido! ⭐</div>
+<nav class="ttl-nav">
+  <div class="ttl-nav-inner">
+    <a class="ttl-nav-logo" href="../">
+      <span class="ttl-nav-logo-icon">🕐</span>
+      <span class="ttl-nav-logo-text">TickTock Tales</span>
+    </a>
+    <div class="ttl-nav-right">
+      <div class="ttl-lang-row"><a href="../privacy.html" class="ttl-lb">🇬🇧 EN</a><a href="./privacy.html" class="ttl-lb-active">🇫🇷 FR</a><a href="../es/privacy.html" class="ttl-lb">🇪🇸 ES</a><a href="../ar/privacy.html" class="ttl-lb">🇸🇦 AR</a></div>
+      <a class="ttl-nav-back" href="../">← Retour au jeu</a>
+      <a class="ttl-nav-cta" href="../">Jouer →</a>
     </div>
-  </a>
-  <div class="hero-divider"></div>
-  <h1 id="hero-title">Privacy Policy</h1>
-  <p class="hero-sub" id="hero-sub">TickTock Tales — Kids Clock Learning Game</p>
-  <div class="lang-row">
-    <button class="lang-btn active" onclick="setLang('en',this)">🇬🇧 EN</button>
-    <button class="lang-btn" onclick="setLang('fr',this)">🇫🇷 FR</button>
-    <button class="lang-btn" onclick="setLang('es',this)">🇪🇸 ES</button>
-    <button class="lang-btn" onclick="setLang('ar',this)">🇸🇦 AR</button>
   </div>
+</nav>
+<div class="ttl-privacy-hero">
+  <h1>Politique de confidentialité</h1>
 </div>
 
-<div class="container">
+<div class="container"><div class="container">
   <p class="updated" id="pp-updated">Last updated: March 1, 2026</p>
 
   <div class="card">
@@ -313,7 +327,7 @@ const TRANS = {
   }
 };
 
-let lang='es';
+let lang='fr';
 function setLang(l,btn){
   lang=l;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
