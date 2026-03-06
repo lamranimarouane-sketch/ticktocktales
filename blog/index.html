@@ -27,8 +27,7 @@ body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--text);}
 nav{background:white;box-shadow:0 2px 16px rgba(91,79,233,.1);position:sticky;top:0;z-index:100;}
 .nav-inner{max-width:720px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
 .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;}
-.nav-logo-icon{font-size:22px;}
-.nav-logo-text{font-family:'Fredoka One',cursive;font-size:18px;color:var(--primary);}
+.nav-logo-icon{font-size:22px;}.nav-logo-text{font-family:'Fredoka One',cursive;font-size:18px;color:var(--primary);}
 .nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .lang-row-nav{display:flex;gap:4px;}
 .lang-btn,.lang-btn-active{font-size:12px;font-weight:700;border-radius:8px;padding:4px 8px;text-decoration:none;border:1.5px solid rgba(91,79,233,.2);color:var(--text-light);}
@@ -52,8 +51,6 @@ nav{background:white;box-shadow:0 2px 16px rgba(91,79,233,.1);position:sticky;to
 .post-title{font-family:'Fredoka One',cursive;font-size:18px;color:var(--text);line-height:1.2;margin-bottom:7px;}
 .post-excerpt{font-size:13px;color:var(--text-light);line-height:1.6;}
 .post-read{font-size:12px;font-weight:700;color:var(--primary);margin-top:8px;}
-.coming{background:var(--card);border-radius:var(--radius);padding:24px;text-align:center;box-shadow:var(--shadow);border:2px dashed rgba(91,79,233,.2);}
-.coming p{font-size:13px;color:var(--text-light);line-height:1.6;}
 footer{text-align:center;padding:24px 20px;font-size:13px;color:var(--text-light);}
 footer a{color:var(--primary);text-decoration:none;font-weight:600;}
 @media(max-width:500px){.post-thumb{width:90px;font-size:36px;}.hero h1{font-size:26px;}}
@@ -62,12 +59,9 @@ footer a{color:var(--primary);text-decoration:none;font-weight:600;}
 <body>
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="../../">
-      <span class="nav-logo-icon">🕐</span>
-      <span class="nav-logo-text">TickTock Tales</span>
-    </a>
+    <a class="nav-logo" href="../../"><span class="nav-logo-icon">🕐</span><span class="nav-logo-text">TickTock Tales</span></a>
     <div class="nav-right">
-      <div class="lang-row-nav"><a href="../" class="lang-btn-active">🇬🇧 EN</a><a href="fr/" class="lang-btn">🇫🇷 FR</a><a href="es/" class="lang-btn">🇪🇸 ES</a><a href="ar/" class="lang-btn">🇸🇦 AR</a></div>
+      <div class="lang-row-nav"><a href="./" class="lang-btn-active">🇬🇧 EN</a><a href="fr/" class="lang-btn">🇫🇷 FR</a><a href="es/" class="lang-btn">🇪🇸 ES</a><a href="ar/" class="lang-btn">🇸🇦 AR</a></div>
       <a class="nav-back" href="../../">← Back to game</a>
       <a class="nav-cta" href="../../">Play Free →</a>
     </div>
@@ -81,6 +75,17 @@ footer a{color:var(--primary);text-decoration:none;font-weight:600;}
 <div class="posts">
   <div class="section-label">Latest Articles</div>
   <div class="post-card">
+    <a href="./am-and-pm-explained-for-kids/">
+      <div class="post-thumb">🌅</div>
+      <div class="post-body">
+        <div class="post-meta"><span class="post-tag">Guide</span><span class="post-date">March 2026</span></div>
+        <div class="post-title">AM and PM Explained for Kids — Easy Guide for Parents</div>
+        <div class="post-excerpt">What do AM and PM mean? A simple guide to help parents and teachers explain the 12-hour clock cycle to children ages 5–9.</div>
+        <div class="post-read">Read article →</div>
+      </div>
+    </a>
+  </div>
+  <div class="post-card">
     <a href="./how-to-teach-kids-to-tell-time/">
       <div class="post-thumb">🕐</div>
       <div class="post-body">
@@ -91,7 +96,6 @@ footer a{color:var(--primary);text-decoration:none;font-weight:600;}
       </div>
     </a>
   </div>
-  <div class="coming"><div style="font-size:28px;margin-bottom:8px;">✍️</div><p>More articles coming soon — <strong>best clock activities for kindergarten</strong>, <strong>when do kids learn to tell time?</strong>, and more.</p></div>
 </div>
 <footer><p>© 2026 TickTock Tales · <a href="https://ticktocktales.app">ticktocktales.app</a> · <a href="../privacy.html">Privacy Policy</a></p></footer>
 </body>

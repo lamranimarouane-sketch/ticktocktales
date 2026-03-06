@@ -27,8 +27,7 @@ body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--text);}
 nav{background:white;box-shadow:0 2px 16px rgba(91,79,233,.1);position:sticky;top:0;z-index:100;}
 .nav-inner{max-width:720px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
 .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;}
-.nav-logo-icon{font-size:22px;}
-.nav-logo-text{font-family:'Fredoka One',cursive;font-size:18px;color:var(--primary);}
+.nav-logo-icon{font-size:22px;}.nav-logo-text{font-family:'Fredoka One',cursive;font-size:18px;color:var(--primary);}
 .nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .lang-row-nav{display:flex;gap:4px;}
 .lang-btn,.lang-btn-active{font-size:12px;font-weight:700;border-radius:8px;padding:4px 8px;text-decoration:none;border:1.5px solid rgba(91,79,233,.2);color:var(--text-light);}
@@ -52,8 +51,6 @@ nav{background:white;box-shadow:0 2px 16px rgba(91,79,233,.1);position:sticky;to
 .post-title{font-family:'Fredoka One',cursive;font-size:18px;color:var(--text);line-height:1.2;margin-bottom:7px;}
 .post-excerpt{font-size:13px;color:var(--text-light);line-height:1.6;}
 .post-read{font-size:12px;font-weight:700;color:var(--primary);margin-top:8px;}
-.coming{background:var(--card);border-radius:var(--radius);padding:24px;text-align:center;box-shadow:var(--shadow);border:2px dashed rgba(91,79,233,.2);}
-.coming p{font-size:13px;color:var(--text-light);line-height:1.6;}
 footer{text-align:center;padding:24px 20px;font-size:13px;color:var(--text-light);}
 footer a{color:var(--primary);text-decoration:none;font-weight:600;}
 @media(max-width:500px){.post-thumb{width:90px;font-size:36px;}.hero h1{font-size:26px;}}
@@ -62,10 +59,7 @@ footer a{color:var(--primary);text-decoration:none;font-weight:600;}
 <body>
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="../../../fr/">
-      <span class="nav-logo-icon">🕐</span>
-      <span class="nav-logo-text">TickTock Tales</span>
-    </a>
+    <a class="nav-logo" href="../../../fr/"><span class="nav-logo-icon">🕐</span><span class="nav-logo-text">TickTock Tales</span></a>
     <div class="nav-right">
       <div class="lang-row-nav"><a href="../" class="lang-btn">🇬🇧 EN</a><a href="./" class="lang-btn-active">🇫🇷 FR</a><a href="../es/" class="lang-btn">🇪🇸 ES</a><a href="../ar/" class="lang-btn">🇸🇦 AR</a></div>
       <a class="nav-back" href="../../../fr/">← Retour au jeu</a>
@@ -81,6 +75,17 @@ footer a{color:var(--primary);text-decoration:none;font-weight:600;}
 <div class="posts">
   <div class="section-label">Derniers articles</div>
   <div class="post-card">
+    <a href="./am-et-pm-expliques-aux-enfants/">
+      <div class="post-thumb">🌅</div>
+      <div class="post-body">
+        <div class="post-meta"><span class="post-tag">Guide</span><span class="post-date">Mars 2026</span></div>
+        <div class="post-title">AM et PM expliqués aux enfants — Guide simple pour les parents</div>
+        <div class="post-excerpt">Que signifient AM et PM ? Un guide simple pour aider parents et enseignants à expliquer le cycle de 12 heures aux enfants de 5 à 9 ans.</div>
+        <div class="post-read">Lire l'article →</div>
+      </div>
+    </a>
+  </div>
+  <div class="post-card">
     <a href="./comment-apprendre-heure-enfants/">
       <div class="post-thumb">🕐</div>
       <div class="post-body">
@@ -91,7 +96,6 @@ footer a{color:var(--primary);text-decoration:none;font-weight:600;}
       </div>
     </a>
   </div>
-  <div class="coming"><div style="font-size:28px;margin-bottom:8px;">✍️</div><p>Plus d'articles à venir — <strong>meilleures activités sur l'horloge</strong>, <strong>à quel âge les enfants apprennent l'heure ?</strong>, et plus encore.</p></div>
 </div>
 <footer><p>© 2026 TickTock Tales · <a href="https://ticktocktales.app">ticktocktales.app</a> · <a href="../../privacy.html">Politique de confidentialité</a></p></footer>
 </body>
