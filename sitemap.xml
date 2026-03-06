@@ -47,12 +47,7 @@
     <xhtml:link rel="alternate" hreflang="ar"        href="https://ticktocktales.app/ar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ticktocktales.app/"/>
   </url>
-  <url>
-    <loc>https://ticktocktales.app/privacy.html</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+
 
   <!-- ==================== BLOG INDEX ==================== -->
   <url>
