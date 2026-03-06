@@ -62,27 +62,48 @@
   .footer{text-align:center;padding:24px 24px 36px;font-size:14px;color:var(--text-light);position:relative;z-index:1;}
   .footer a{color:var(--primary);text-decoration:none;}
   @media(max-width:480px){.card{padding:18px 16px;}.app-logo{font-size:30px;}.clock-emoji-spin{font-size:44px;}.hero h1{font-size:22px;}}
+
+  /* Blog-style nav */
+  nav{background:white;box-shadow:0 2px 16px rgba(91,79,233,.1);position:sticky;top:0;z-index:100;}
+  .nav-inner{max-width:720px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+  .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;}
+  .nav-logo-icon{font-size:22px;}
+  .nav-logo-text{font-family:'Fredoka One',cursive;font-size:18px;color:#5B4FE9;}
+  .nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .lang-row-nav{display:flex;gap:4px;}
+  .lang-btn,.lang-btn-active{font-size:12px;font-weight:700;border-radius:8px;padding:4px 8px;text-decoration:none;border:1.5px solid rgba(91,79,233,.2);color:#8884C0;}
+  .lang-btn-active{background:#5B4FE9;color:white;border-color:#5B4FE9;}
+  .nav-back{font-size:13px;font-weight:600;color:#8884C0;text-decoration:none;}
+  .nav-cta{background:#5B4FE9;color:white;border-radius:12px;padding:7px 16px;font-size:13px;font-weight:700;text-decoration:none;}
+
+  .privacy-hero{background:linear-gradient(135deg,#5B4FE9,#8B82F0);padding:44px 24px 52px;text-align:center;}
+  .privacy-hero .article-tag{display:inline-block;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.3);border-radius:99px;padding:5px 14px;font-size:12px;font-weight:600;color:white;margin-bottom:14px;}
+  .privacy-hero h1{font-family:'Fredoka One',cursive;font-size:32px;color:white;line-height:1.15;}
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <a href="https://ticktocktales.app" class="app-logo-wrap">
-    <span class="clock-emoji-spin">🕐</span>
-    <div class="logo-text">
-      <div class="app-logo">TickTock Tales</div>
-      <div class="app-tagline" id="hero-tagline">Learn to tell time — it's fun! ⭐</div>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://ticktocktales.app/">
+      <span class="nav-logo-icon">🕐</span>
+      <span class="nav-logo-text">TickTock Tales</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-row-nav">
+        <a href="https://ticktocktales.app/privacy.html"  class="lang-btn-active">🇬🇧 EN</a>
+        <a href="https://ticktocktales.app/fr/privacy.html" class="lang-btn">🇫🇷 FR</a>
+        <a href="https://ticktocktales.app/es/privacy.html" class="lang-btn">🇪🇸 ES</a>
+        <a href="https://ticktocktales.app/ar/privacy.html" class="lang-btn">🇸🇦 AR</a>
+      </div>
+      <a class="nav-back" href="https://ticktocktales.app/">← Back to game</a>
+      <a class="nav-cta" href="https://ticktocktales.app/">Play Free →</a>
     </div>
-  </a>
-  <div class="hero-divider"></div>
-  <h1 id="hero-title">Privacy Policy</h1>
-  <p class="hero-sub" id="hero-sub">TickTock Tales — Kids Clock Learning Game</p>
-  <div class="lang-row">
-    <button class="lang-btn active" onclick="setLang('en',this)">🇬🇧 EN</button>
-    <button class="lang-btn" onclick="setLang('fr',this)">🇫🇷 FR</button>
-    <button class="lang-btn" onclick="setLang('es',this)">🇪🇸 ES</button>
-    <button class="lang-btn" onclick="setLang('ar',this)">🇸🇦 AR</button>
   </div>
+</nav>
+
+<div class="privacy-hero">
+  <h1>Privacy Policy</h1>
 </div>
 
 <div class="container">
@@ -98,7 +119,7 @@
   <div class="card">
     <h2 id="pp-s2-title">👤 Who We Are</h2>
     <p id="pp-s2-body">TickTock Tales is an independent educational app for children. If you have any questions about this privacy policy, you can contact us at:</p>
-    <div class="highlight">📧 ticktocktales@gmail.com</div>
+    <div class="highlight">📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="512538323a253e323a25303d342211363c30383d7f323e3c">[email&#160;protected]</a></div>
   </div>
 
   <div class="card">
@@ -155,7 +176,7 @@
   <div class="card">
     <h2 id="pp-s11-title">📬 Contact Us</h2>
     <p id="pp-s11-body">If you have any questions or concerns about this privacy policy or the app, please contact us:</p>
-    <div class="highlight">📧 ticktocktales@gmail.com<br>🌐 ticktocktales.app</div>
+    <div class="highlight">📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="35415c565e415a565e4154595046755258545c591b565a58">[email&#160;protected]</a><br>🌐 ticktocktales.app</div>
     <p id="pp-s11-footer">We will respond to all privacy-related inquiries within 48 hours.</p>
   </div>
 </div>
@@ -165,7 +186,7 @@
   <p style="margin-top:4px" id="footer-tagline">Made with ❤️ for curious kids everywhere · <a href="index.html">Back to Game</a></p>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const TRANS = {
   en:{
     tagline:"Learn to tell time — it's fun! ⭐",
@@ -334,13 +355,4 @@ function render(){
   s('pp-s5-title',t.s5Title);s('pp-s5-body1',t.s5B1);s('pp-s5-body2',t.s5B2);s('pp-s5-body3',t.s5B3);
   s('pp-s6-title',t.s6Title);s('pp-s6-highlight',t.s6Hl);s('pp-s6-body',t.s6Body);s('pp-s6-list',t.s6List);
   s('pp-s7-title',t.s7Title);s('pp-s7-body',t.s7Body);
-  s('pp-s8-title',t.s8Title);s('pp-s8-body1',t.s8B1);s('pp-s8-body2',t.s8B2);
-  s('pp-s9-title',t.s9Title);s('pp-s9-body',t.s9Body);s('pp-s9-list',t.s9List);
-  s('pp-s10-title',t.s10Title);s('pp-s10-body1',t.s10B1);s('pp-s10-body2',t.s10B2);
-  s('pp-s11-title',t.s11Title);s('pp-s11-body',t.s11Body);s('pp-s11-footer',t.s11Footer);
-  s('footer-tagline',t.footer);
-}
-render();
-</script>
-</body>
-</html>
+  s('pp-s8-title',t.s8Title);s('pp-s8-bod
