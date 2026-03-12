@@ -766,6 +766,16 @@ function applyTranslations(){
   set('seo-pill7',l.pill7);set('seo-pill8',l.pill8);set('seo-pill9',l.pill9);
   // Blog link
   set('lbl-blog-title',l.blogTitle);set('lbl-blog-sub',l.blogSub);
+  // 2-Player mode labels
+  set('lbl-2p-title',l.twoP);set('lbl-2p-sub',l.twoPSub);
+  set('lbl-2p-setup-title',l.twoPSetupTitle);set('lbl-2p-setup-sub',l.twoPSetupSub);
+  set('lbl-2p-choose-level',l.twoPChooseLevel);
+  set('lbl-2p-easy',l.easy);set('lbl-2p-easy-desc',l.easyDesc);
+  set('lbl-2p-medium',l.medium);set('lbl-2p-medium-desc',l.mediumDesc);
+  set('lbl-2p-hard',l.hard);set('lbl-2p-hard-desc',l.hardDesc);
+  set('lbl-2p-start-btn',l.twoPStartBtn);set('lbl-2p-back-btn',l.twoPBackBtn);
+  if($('tpQuizHomeBtn'))$('tpQuizHomeBtn').textContent=l.twoPBackBtn;
+  if($('tpHandoffHomeBtn'))$('tpHandoffHomeBtn').textContent=l.twoPBackBtn;
   const blogLink=$('lbl-blog-link');if(blogLink&&l.blogHref)blogLink.href=l.blogHref;
   set('lbl-easy',l.easy);set('lbl-easy-desc',l.easyDesc);
   set('lbl-medium',l.medium);set('lbl-medium-desc',l.mediumDesc);
@@ -1390,8 +1400,6 @@ function tp_showResult(){
   }
   $('tpBtnPlayAgain').textContent=l.twoPPlayAgain||'Play Again 🔄';
   $('tpBtnHome').textContent=l.twoPHome||'Home';
-  if($('tpQuizHomeBtn'))$('tpQuizHomeBtn').textContent=l.twoPBackBtn||'← Back';
-  if($('tpHandoffHomeBtn'))$('tpHandoffHomeBtn').textContent=l.twoPBackBtn||'← Back';
   showScreen('2presult');
 }
 
