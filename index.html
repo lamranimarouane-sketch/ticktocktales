@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -15,7 +15,7 @@
 <meta name="author" content="TickTock Tales">
 <meta name="robots" content="index, follow">
 <meta name="google-site-verification" content="xguwpHv3UsIRm5l6yY_6EQKixWZqKZNzAyfXbW6urVw">
-<link rel="canonical" href="https://ticktocktales.app/fr/">
+<link rel="canonical" href="https://ticktocktales.app/">
 
 <!-- Hreflang — language-specific URLs -->
 <link rel="alternate" hreflang="en" href="https://ticktocktales.app/">
@@ -301,7 +301,7 @@
       <span style="background:rgba(255,255,255,.2);color:white;font-family:'Fredoka One',cursive;font-size:13px;border-radius:99px;padding:6px 14px;white-space:nowrap;">NEW ✨</span>
     </button>
     <!-- Support Card -->
-    <a id="lbl-support-link" href="../support/fr/" style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card-bg);border-radius:20px;padding:15px 20px;box-shadow:var(--shadow);text-decoration:none;border:2px solid rgba(255,140,66,.25);transition:all .2s;margin-bottom:2px;" onmouseover="this.style.borderColor='#FF8C42';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,140,66,.25)';this.style.transform=''">
+    <a id="lbl-support-link" href="support/" style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card-bg);border-radius:20px;padding:15px 20px;box-shadow:var(--shadow);text-decoration:none;border:2px solid rgba(255,140,66,.25);transition:all .2s;margin-bottom:2px;" onmouseover="this.style.borderColor='#FF8C42';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,140,66,.25)';this.style.transform=''">
       <div style="display:flex;align-items:center;gap:12px;">
         <span style="font-size:28px;background:rgba(255,140,66,.15);border-radius:12px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">☕</span>
         <div style="text-align:left;">
@@ -327,7 +327,7 @@
     </a>
     <div style="text-align:center;padding:18px 0 4px;font-size:13px;color:#888;font-family:'Fredoka',sans-serif;">
       <p>© 2026 TickTock Tales · <a href="https://ticktocktales.app" style="color:var(--primary);text-decoration:none;font-weight:600;">ticktocktales.app</a></p>
-      <p style="margin-top:4px;">Made with ❤️ for curious kids everywhere · <a href="../privacy.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Privacy Policy</a> · <a href="../support/fr/" style="color:var(--orange,#FF8C42);text-decoration:none;font-weight:600;">☕ Support</a></p>
+      <p style="margin-top:4px;">Made with ❤️ for curious kids everywhere · <a href="privacy.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Privacy Policy</a> · <a href="support/" style="color:var(--orange,#FF8C42);text-decoration:none;font-weight:600;">☕ Support</a></p>
     </div>
   </div>
 
@@ -582,7 +582,7 @@ const LANGS = {
     seoH1:'Learn to Tell Time',seoSub:'Free interactive clock game for kids ages 5–9. Practice with 4 difficulty levels, earn badges, and learn in English, French, Spanish or Arabic. No ads, no sign-up, works offline.',seoP1:"TickTock Tales is a free educational game that helps children aged 5–9 learn to tell time on an analog clock. With three difficulty levels, kids start with whole hours and progress to reading any minute on the clock face.",seoP2:"Our fun clock reading practice includes instant feedback, a streak system, and collectible badges to keep kids motivated. The free play mode lets children drag the clock hands to explore time at their own pace.",seoP3:"Available in <strong>English, French, Spanish and Arabic</strong> — perfect for bilingual families, international schools, and homeschooling parents worldwide.",
     pill1:'📚 4 Difficulty Levels',pill2:'🌍 4 Languages',pill3:'🏅 Badge System',pill4:'✅ 100% Free',pill5:'📱 Works Offline',pill6:'👶 Ages 5–9',pill7:'⏱️ Timer Mode',pill8:'👨‍👩‍👧 Parent Dashboard',pill9:'🆚 2 Player Mode',
     supportTitle:'Support TickTock Tales',supportSub:'Free & ad-free, thanks to you 💛',supportBtn:'Buy us a coffee →',supportHref:'support/',
-    blogTitle:'Tips & Guides Blog',blogHref:'../blog/fr/',blogSub:'How to teach kids to tell time →',
+    blogTitle:'Tips & Guides Blog',blogHref:'blog/',blogSub:'How to teach kids to tell time →',
     badgeNames:{first:'First Steps',streak3:'On Fire',perfect:'Perfect!',hard:'Champion',xhard:'Time Master',medium:'Scholar',easy:'Starter'},
     twoP:'2 Player Mode', twoPSub:'Take turns — 10 rounds each!',
     twoPSetupTitle:'2 Player Mode', twoPSetupSub:'Take turns answering 10 questions each. Highest score wins!',
@@ -757,7 +757,7 @@ function setLang(l,btn){
 
 function initLangFromURL(){
   const path=window.location.pathname;
-  let lang='fr';
+  let lang='en';
   if(path.includes('/fr/'))lang='fr';
   else if(path.includes('/es/'))lang='es';
   else if(path.includes('/ar/'))lang='ar';
