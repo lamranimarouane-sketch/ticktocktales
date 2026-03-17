@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#5B4FE9">
+<title>Soutenir TickTock Tales — Offrez-nous un café ☕</title>
+<meta name="description" content="TickTock Tales est gratuit, sans pub, sans inscription. Si l'appli a aidé votre enfant à lire l'heure, offrez-nous un café !">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ticktocktales.app/support/fr/">
+<link rel="alternate" hreflang="en"        href="https://ticktocktales.app/support/">
+<link rel="alternate" hreflang="fr"        href="https://ticktocktales.app/support/fr/">
+<link rel="alternate" hreflang="es"        href="https://ticktocktales.app/support/es/">
+<link rel="alternate" hreflang="ar"        href="https://ticktocktales.app/support/ar/">
+<link rel="alternate" hreflang="x-default" href="https://ticktocktales.app/support/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ticktocktales.app/support/fr/">
+<meta property="og:title" content="Soutenir TickTock Tales — Offrez-nous un café ☕">
+<meta property="og:description" content="TickTock Tales est gratuit, sans pub, sans inscription. Si l'appli a aidé votre enfant à lire l'heure, offrez-nous un café !">
+<meta property="og:image" content="https://ticktocktales.app/icon-512.png">
+<link rel="icon" href="https://ticktocktales.app/icon-512.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF9F0;--primary:#5B4FE9;--primary-light:#8B82F0;--accent:#FFD93D;--green:#6BCB77;--orange:#FF8C42;--card:#FFF;--text:#2D2B55;--text-light:#8884C0;--shadow:0 8px 32px rgba(91,79,233,.12);--radius:20px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+nav{background:white;box-shadow:0 2px 16px rgba(91,79,233,.1);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:600px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-logo-icon{font-size:22px;}.nav-logo-text{font-family:'Fredoka One',cursive;font-size:18px;color:var(--primary);}
+.nav-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.lang-row-nav{display:flex;gap:4px;}
+.lang-btn,.lang-btn-active{font-size:12px;font-weight:700;border-radius:8px;padding:4px 8px;text-decoration:none;border:1.5px solid rgba(91,79,233,.2);color:var(--text-light);}
+.lang-btn-active{background:var(--primary);color:white;border-color:var(--primary);}
+.nav-play{background:var(--primary);color:white;border-radius:12px;padding:7px 16px;font-size:13px;font-weight:700;text-decoration:none;}
+.hero{background:linear-gradient(135deg,#5B4FE9,#8B82F0);padding:52px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;width:400px;height:400px;background:rgba(255,255,255,.06);border-radius:50%;top:-100px;right:-100px;}
+.hero::after{content:'';position:absolute;width:250px;height:250px;background:rgba(255,255,255,.05);border-radius:50%;bottom:-80px;left:-60px;}
+.hero-emoji{font-size:64px;display:block;margin-bottom:16px;animation:bounce 2s ease-in-out infinite;position:relative;z-index:1;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.hero h1{font-family:'Fredoka One',cursive;font-size:32px;color:white;line-height:1.15;margin-bottom:12px;position:relative;z-index:1;}
+.hero p{font-size:15px;color:rgba(255,255,255,.85);max-width:420px;margin:0 auto;line-height:1.65;position:relative;z-index:1;}
+.wrap{max-width:600px;margin:0 auto;padding:40px 24px 60px;}
+.story{display:flex;flex-direction:column;gap:14px;margin-bottom:36px;}
+.story-card{background:var(--card);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);display:flex;align-items:flex-start;gap:14px;}
+.story-icon{font-size:28px;width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.story-icon.purple{background:rgba(91,79,233,.1);}.story-icon.yellow{background:rgba(255,217,61,.2);}
+.story-icon.green{background:rgba(107,203,119,.15);}.story-icon.orange{background:rgba(255,140,66,.15);}
+.story-text h3{font-family:'Fredoka One',cursive;font-size:16px;color:var(--text);margin-bottom:4px;}
+.story-text p{font-size:13px;color:var(--text-light);line-height:1.6;}
+.divider{text-align:center;margin:8px 0 28px;font-size:22px;letter-spacing:6px;}
+.amounts-label{font-size:11px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;text-align:center;}
+.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px;}
+.amount-card{background:var(--card);border-radius:16px;padding:16px 10px;text-align:center;box-shadow:var(--shadow);text-decoration:none;border:2px solid transparent;transition:all .2s;display:block;}
+.amount-card:hover{border-color:var(--primary-light);transform:translateY(-3px);}
+.amount-emoji{font-size:28px;display:block;margin-bottom:6px;}
+.amount-val{font-family:'Fredoka One',cursive;font-size:20px;color:var(--primary);}
+.amount-label{font-size:11px;color:var(--text-light);margin-top:2px;}
+.cta-box{background:linear-gradient(135deg,#FF8C42,#FF6B6B);border-radius:var(--radius);padding:30px 24px;text-align:center;box-shadow:0 10px 32px rgba(255,107,107,.35);margin-bottom:28px;}
+.cta-box h2{font-family:'Fredoka One',cursive;font-size:24px;color:white;margin-bottom:10px;}
+.cta-box p{font-size:14px;color:rgba(255,255,255,.9);line-height:1.65;margin-bottom:22px;}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:white;color:var(--text);border-radius:16px;padding:14px 32px;font-family:'Fredoka One',cursive;font-size:20px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .2s,box-shadow .2s;}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.2);}
+.cta-note{font-size:12px;color:rgba(255,255,255,.75);margin-top:14px;}
+.promise{background:rgba(107,203,119,.1);border-left:4px solid var(--green);border-radius:var(--radius);padding:16px 20px;margin-bottom:28px;}
+.promise .pt{font-weight:700;color:#2e7d32;font-size:13px;margin-bottom:5px;}
+.promise p{font-size:13px;color:var(--text);line-height:1.65;}
+.promise strong{color:var(--primary);}
+.back-row{text-align:center;}
+.back-row a{font-size:14px;color:var(--text-light);text-decoration:none;font-weight:600;}
+.back-row a:hover{color:var(--primary);}
+footer{text-align:center;padding:20px;font-size:13px;color:var(--text-light);}
+footer a{color:var(--primary);text-decoration:none;font-weight:600;}
+@media(max-width:400px){.hero h1{font-size:24px;}.cta-btn{font-size:16px;padding:12px 20px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://ticktocktales.app/fr/"><span class="nav-logo-icon">🕐</span><span class="nav-logo-text">TickTock Tales</span></a>
+    <div class="nav-right">
+      <div class="lang-row-nav"><a href="../../support/" class="lang-btn">🇬🇧 EN</a><a href="./" class="lang-btn-active">🇫🇷 FR</a><a href="../../support/es/" class="lang-btn">🇪🇸 ES</a><a href="../../support/ar/" class="lang-btn">🇸🇦 AR</a></div>
+      <a class="nav-play" href="https://ticktocktales.app/fr/">Jouer →</a>
+    </div>
+  </div>
+</nav>
+<div class="hero">
+  <span class="hero-emoji">☕</span>
+  <h1>Gardons TickTock Tales gratuit !</h1>
+  <p>Cette appli n'a pas de pub, pas d'abonnement, pas d'inscription. Juste un jeu éducatif fait avec amour pour les enfants du monde entier. Si elle a aidé votre enfant, un café nous aide beaucoup ! 🎉</p>
+</div>
+<div class="wrap">
+  <div class="story"><div class="story-card"><div class="story-icon purple">🧑‍💻</div><div class="story-text"><h3>Créé par une seule personne</h3><p>TickTock Tales est un projet solo — conçu, codé et maintenu par un seul développeur qui voulait un meilleur moyen d'apprendre l'heure aux enfants.</p></div></div>
+<div class="story-card"><div class="story-icon yellow">🚫</div><div class="story-text"><h3>Zéro pub. Zéro trackers.</h3><p>Pas de bannières, pas de collecte de données, pas de freemium. Les enfants jouent librement sans distractions — et ça restera ainsi.</p></div></div>
+<div class="story-card"><div class="story-icon green">🌍</div><div class="story-text"><h3>4 langues, toujours gratuit</h3><p>Anglais, français, espagnol et arabe — parce que chaque enfant mérite d'apprendre dans sa langue, peu importe où il vit.</p></div></div>
+<div class="story-card"><div class="story-icon orange">✨</div><div class="story-text"><h3>Votre soutien = de nouvelles fonctionnalités</h3><p>Chaque café aide à ajouter de nouveaux niveaux, activités et améliorations. Le mode 2 joueurs ? Créé avec amour (et beaucoup de café ☕).</p></div></div>
+</div>
+  <div class="divider">· · ·</div>
+  <p class="amounts-label">Choisissez votre montant</p>
+  <div class="amounts"><a class="amount-card" href="https://paypal.me/maolamrani/3" target="_blank" rel="noopener"><span class="amount-emoji">☕</span><div class="amount-val">3 $</div><div class="amount-label">Un café</div></a>
+<a class="amount-card" href="https://paypal.me/maolamrani/5" target="_blank" rel="noopener"><span class="amount-emoji">☕☕</span><div class="amount-val">5 $</div><div class="amount-label">Double dose</div></a>
+<a class="amount-card" href="https://paypal.me/maolamrani/10" target="_blank" rel="noopener"><span class="amount-emoji">🏆</span><div class="amount-val">10 $</div><div class="amount-label">Champion !</div></a>
+</div>
+  <div class="cta-box">
+    <h2>Offrez-nous un café ☕</h2>
+    <p>N'importe quel montant aide à garder l'appli gratuite et sans pub. Ça prend 30 secondes via PayPal — aucun compte requis pour le donateur.</p>
+    <a class="cta-btn" href="https://paypal.me/maolamrani" target="_blank" rel="noopener">💛 Soutenir via PayPal</a>
+    <p class="cta-note">Paiement sécurisé via PayPal · Aucun compte requis · Toute devise acceptée</p>
+  </div>
+  <div class="promise"><div class="pt">✅ Notre promesse</div><p>TickTock Tales sera <strong>toujours gratuit</strong> pour chaque enfant, partout dans le monde. Les dons nous aident à améliorer et maintenir l'appli — ils ne débloquent jamais de fonctionnalités payantes.</p></div>
+  <div class="back-row"><a href="https://ticktocktales.app/fr/">← Retour à TickTock Tales</a></div>
+</div>
+<footer><p>© 2026 TickTock Tales · <a href="https://ticktocktales.app">ticktocktales.app</a> · <a href="../../privacy.html">Confidentialité</a></p></footer>
+</body></html>
