@@ -233,4 +233,42 @@
     <xhtml:link rel="alternate" hreflang="ar"        href="https://ticktocktales.app/blog/ar/%D8%A3%D9%88%D8%B1%D8%A7%D9%82-%D8%B9%D9%85%D9%84-%D9%82%D8%B1%D8%A7%D8%A1%D8%A9-%D8%A7%D9%84%D8%B3%D8%A7%D8%B9%D8%A9-%D9%84%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ticktocktales.app/blog/clock-reading-worksheets-for-kids/"/>
   </url>
+
+  <!-- Article 5: How to Explain AM and PM to Kids -->
+  <url>
+    <loc>https://ticktocktales.app/blog/how-to-explain-am-pm-to-kids/</loc>
+    <lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ticktocktales.app/blog/how-to-explain-am-pm-to-kids/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ticktocktales.app/blog/fr/comment-expliquer-am-pm-aux-enfants/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://ticktocktales.app/blog/es/como-explicar-am-pm-a-los-ninos/"/>
+    <xhtml:link rel="alternate" hreflang="ar"        href="https://ticktocktales.app/blog/ar/%D9%83%D9%8A%D9%81-%D8%AA%D8%B4%D8%B1%D8%AD-am-%D9%88-pm-%D9%84%D8%B7%D9%81%D9%84%D9%83/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ticktocktales.app/blog/how-to-explain-am-pm-to-kids/"/>
+  </url>
+  <url>
+    <loc>https://ticktocktales.app/blog/fr/comment-expliquer-am-pm-aux-enfants/</loc>
+    <lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ticktocktales.app/blog/how-to-explain-am-pm-to-kids/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ticktocktales.app/blog/fr/comment-expliquer-am-pm-aux-enfants/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://ticktocktales.app/blog/es/como-explicar-am-pm-a-los-ninos/"/>
+    <xhtml:link rel="alternate" hreflang="ar"        href="https://ticktocktales.app/blog/ar/%D9%83%D9%8A%D9%81-%D8%AA%D8%B4%D8%B1%D8%AD-am-%D9%88-pm-%D9%84%D8%B7%D9%81%D9%84%D9%83/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ticktocktales.app/blog/how-to-explain-am-pm-to-kids/"/>
+  </url>
+  <url>
+    <loc>https://ticktocktales.app/blog/es/como-explicar-am-pm-a-los-ninos/</loc>
+    <lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ticktocktales.app/blog/how-to-explain-am-pm-to-kids/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ticktocktales.app/blog/fr/comment-expliquer-am-pm-aux-enfants/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://ticktocktales.app/blog/es/como-explicar-am-pm-a-los-ninos/"/>
+    <xhtml:link rel="alternate" hreflang="ar"        href="https://ticktocktales.app/blog/ar/%D9%83%D9%8A%D9%81-%D8%AA%D8%B4%D8%B1%D8%AD-am-%D9%88-pm-%D9%84%D8%B7%D9%81%D9%84%D9%83/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ticktocktales.app/blog/how-to-explain-am-pm-to-kids/"/>
+  </url>
+  <url>
+    <loc>https://ticktocktales.app/blog/ar/%D9%83%D9%8A%D9%81-%D8%AA%D8%B4%D8%B1%D8%AD-am-%D9%88-pm-%D9%84%D8%B7%D9%81%D9%84%D9%83/</loc>
+    <lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ticktocktales.app/blog/how-to-explain-am-pm-to-kids/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ticktocktales.app/blog/fr/comment-expliquer-am-pm-aux-enfants/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://ticktocktales.app/blog/es/como-explicar-am-pm-a-los-ninos/"/>
+    <xhtml:link rel="alternate" hreflang="ar"        href="https://ticktocktales.app/blog/ar/%D9%83%D9%8A%D9%81-%D8%AA%D8%B4%D8%B1%D8%AD-am-%D9%88-pm-%D9%84%D8%B7%D9%81%D9%84%D9%83/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ticktocktales.app/blog/how-to-explain-am-pm-to-kids/"/>
+  </url>
 </urlset>
